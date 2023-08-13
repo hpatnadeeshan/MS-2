@@ -22,3 +22,15 @@ body {
     max-width: 600px;
     min-height: 75vh;
 }
+
+
+.rabbit-path {
+    display: flex;
+    flex-direction: row;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
