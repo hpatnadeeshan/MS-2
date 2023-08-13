@@ -1,39 +1,66 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bunny Hop Memory
 
-Welcome,
+## Milestone Project -02 - _Interactive Front End Development_ - Code Institute
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Bunny Hop Memory is a charming memory game where players guide a rabbit through a garden, collecting carrots while avoiding traps and outsmarting the watchful dog.This game can play any user without any age limites.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **July 26th, 2023**
+## User Experience
 
-## Codeanywhere Reminders
+### User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
++ As a player, I want to see a grid of face-down cards containing images of carrots, traps, and a dog on the back of each card when I start the game.
 
-`python3 -m http.server`
++ As a player I want to flipped 2 cards at a time.
++ As a player, I want to earn points when I flip over two matching cards with images of carrots and lose points when I flip over two matching cards with trap images.
++ As a player I must lose the game if I Select a card with dog image.
++ As a player, I expect the game to end immediately if I select a card with a dog image, resulting in a loss.
++ As a player, I want to play continuously until the rabbit reaches its hole, unless I lose.
++ As a player, I want the game to have levels and a total score, and I want these to be visible at all times
++ As a player,I want to see the number of movements and the time it takes to complete the game, allowing me to track how many movements and how much time it took to win the game.
++ As a player, I want to reset the game at anytime during play.
++ As a player, I want the game to have animations, a visually appealing design, sound effects, and responsiveness across all devices.
++ As a player, I want the game to be enjoyable, strategic, challenging, and to encourage the use of memory skills.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+#### Colour Scheme
 
-`http_server`
+#### Typography
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Wireframes
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Features
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Existing Features
 
-To log into the Heroku toolbelt CLI:
+### Future Features
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Technologies Used
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Languages Used
 
----
+### Frameworks Libraries and Programmes Used
 
-Happy coding!
+## Testing
+
+### Validator Testing
+
+### Lighthouse Testing
+
+### Responsiveness
+
+### Testing User Stories
+
+### Problems Encountered
+
+## Deployment
+
+### Deployment through GitHub Pages
+
+## Credits
+
+### Code
+
+### Media
+
+### Acknowledgements
