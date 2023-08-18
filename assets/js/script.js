@@ -13,6 +13,10 @@ let flippedCards = [];
 
 // Function to shuffle the cards
 
+function shuffle(array) {
+
+}
+
 // Function to select random cards for the game(only select carrots and traps & only select half number of total cards)
 
 function selectCards(totalCount) {
@@ -51,7 +55,67 @@ function selectCards(totalCount) {
     return selectedCards;
 }
 
+
 // Function to assign random images to cards
+function assignRandomImages(level) {
+    const levelCards = cardsEachLevel[level - 1];
+
+    // Example: Select 3 random cards
+    const selectedRandomCards = selectCards(levelCards);
+    // console.log(selectedRandomCards);
+
+    const allCards = selectedRandomCards.concat(selectedRandomCards); // Duplicate to create pairs
+    console.log(allCards);
+    //push dog cards
+    if (levelCards === 9) {
+        allCards.push(loseCard);
+    } else if (levelCards === 12) {
+        for (let i = 0; i < 2; i++) {
+            allCards.push(loseCard);
+        }
+    } else if (levelCards === 15) {
+        for (let i = 0; i < 3; i++) {
+            allCards.push(loseCard);
+        }
+    }
+    shuffle(allCards);
+
+    const cardGrid = document.querySelector(".card-grid");
+    cardGrid.innerHTML = ""; // Clear existing cards
+    let a = 0;
+    // console.log(allCards);
+    allCards.forEach((card) => {
+        const cardElement = document.createElement("div");
+        // console.log(++a);
+        cardElement.classList.add("card");
+        cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
+        cardElement.style.backgroundRepeat = 'no-repeat';
+        cardElement.style.backgroundPosition = 'center';
+        if (currentLevel >= 16) {
+            cardElement.style.backgroundSize = '30% auto';
+        } else {
+            cardElement.style.backgroundSize = '50% auto';
+        }
+
+        cardElement.addEventListener("click", () => {
+            if (canClick) {
+                flipCard(cardElement, card);
+            }
+        });
+
+        cardGrid.appendChild(cardElement);
+    });
+
+    setTimeout(() => {
+        const cardElements = document.querySelectorAll(".card");
+        cardElements.forEach((card) => {
+            card.style.backgroundImage = ""; // Clear images after 1.5s
+            card.style.backgroundColor = "grey";
+        });
+        canClick = true; // Enable clicking after 1.5s
+    }, 1500);
+}
+
 
 
 // Function to flip a card
