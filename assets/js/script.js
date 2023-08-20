@@ -2,15 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = [
         { type: 'carrot', image: 'carrot.png', score: 10 },
         { type: 'trap', image: 'trap.png', score: -5 },
-        { type: 'dog', image: 'dog.png', score: 0 }
     ];
-
+    const loseCard = { type: "dog", score: 0, image: "dog.png" };
     const maxLevel = 15;
     const cardsEachLevel = [6, 6, 6, 9, 9, 9, 9, 9, 12, 12, 12, 12, 12, 15, 15];
 
     let score = 0;
     let level = 1;
     let flippedCards = [];
+    let canClick = false;
+    let numCarrotCards;
+    let carrotMatchCount = 0;
 
     // Function to shuffle the cards
 
@@ -135,6 +137,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to check for match 
+
+    function checkForMatch() {
+        const [card1, card2] = flippedCards;
+
+        if (card1.card.type === card2.card.type) {
+            if (card1.card.type === 'carrot') {
+                score += 10;
+                ++carrotMatchCount;
+            } else if (card1.card.type === 'trap') {
+                score -= 5;
+            }
+            updateScore();
+        } else {
+            setTimeout(() => {
+                card1.element.classList.remove('flipped');
+                card2.element.classList.remove('flipped');
+                card1.element.style.backgroundImage = ""; // Reset background image
+                card2.element.style.backgroundImage = ""; // Reset background image
+                flippedCards = [];
+                canClick = true;
+            }, 1000); // Delay for better visibility
+        }
+
+        flippedCards = [];
+        canClick = true;
+        if (checkAllCarrotCardsFlipped()) {
+            carrotMatchCount = 0;
+            restartWithDelay();
+        }
+
+    }
+
+    // Function to check if all carrot cards are flipped
+    function checkAllCarrotCardsFlipped() {
+        console.log(carrotMatchCount);
+        let allCarrotCardsFlipped = carrotMatchCount === numCarrotCards;
+        return allCarrotCardsFlipped;
+    }
+
+    // Function to update the score
+    function updateScore() {
+        const scoreDisplay = document.querySelector('.score span');
+        scoreDisplay.textContent = score;
+    }
 
     // Function to start the game
 
