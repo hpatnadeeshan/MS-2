@@ -176,10 +176,39 @@ document.addEventListener("DOMContentLoaded", () => {
         return allCarrotCardsFlipped;
     }
 
+
+    // Function to move to the next level
+    function moveToNextLevel() {
+        level++;
+        if (level <= maxLevel) {
+            assignRandomImages(level);
+        } else {
+            // Game completed
+            alert('Congratulations! You completed all levels.');
+            initializeGame(); // Restart the game with a delay
+        }
+    }
+
+    // Function to update the level
+    function updateLevel() {
+        const levelDisplay = document.querySelector('.level span');
+        levelDisplay.textContent = level;
+    }
+
     // Function to update the score
     function updateScore() {
         const scoreDisplay = document.querySelector('.score span');
         scoreDisplay.textContent = score;
+    }
+
+    // Function to start in next level 
+
+    function restartWithDelay() {
+        setTimeout(() => {
+            moveToNextLevel();
+            startGame();
+            updateLevel();
+        }, 1500); // Delay before restarting the game
     }
 
     // Function to start the game
