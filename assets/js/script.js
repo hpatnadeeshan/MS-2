@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startGame() {
         assignRandomImages(level);
+        console.log(level);
     }
 
     // Game over function
@@ -236,11 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function gameOver(message) {
         alert(message);
         setTimeout(() => {
-            startGame();
             score = 0;
             level = 1;
             canClick = false;
             carrotMatchCount = 0;
+            startGame();
             updateScore();
             updateLevel();
         }, 1500);
