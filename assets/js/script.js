@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function assignRandomImages(level) {
         const levelCards = cardsEachLevel[level - 1];
 
-        // Example: Select 3 random cards
+        //  Select random cards
         const selectedRandomCards = selectCards(levelCards);
-        console.log(selectedRandomCards);
+        // console.log(selectedRandomCards);
 
         const allCards = selectedRandomCards.concat(selectedRandomCards); // Duplicate to create pairs
-        console.log(allCards);
+        // console.log(allCards);
         //push dog cards
         if (levelCards === 9) {
             allCards.push(loseCard);
@@ -104,6 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.addEventListener("click", () => {
                 if (canClick) {
                     flipCard(cardElement, card);
+                    let reason;
+                    if (card.image === 'dog.png') {
+                        reason = "You Lose!!! clicked a dog card.";
+                        gameOver(reason);
+                    }
                 }
             });
 
@@ -131,7 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
             flippedCards.push({ element: cardElement, card: card });
 
             if (flippedCards.length === 2) {
-                setTimeout(checkForMatch, 1000);
+                setTimeout(() => {
+                    checkForMatch();
+                }, 1000);
             }
         }
     }
@@ -171,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to check if all carrot cards are flipped
     function checkAllCarrotCardsFlipped() {
-        console.log(carrotMatchCount);
+        // console.log(carrotMatchCount);
         let allCarrotCardsFlipped = carrotMatchCount === numCarrotCards;
         return allCarrotCardsFlipped;
     }
@@ -198,7 +205,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to update the score
     function updateScore() {
         const scoreDisplay = document.querySelector('.score span');
-        scoreDisplay.textContent = score;
+
+        if (score < 0) {
+
+            let reason = "You Lose!!! Your score went negative.";
+            gameOver(reason);
+        } else {
+            scoreDisplay.textContent = score;
+        }
     }
 
     // Function to start in next level 
@@ -215,6 +229,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startGame() {
         assignRandomImages(level);
+    }
+
+    // Game over function
+
+    function gameOver(message) {
+        alert(message);
+        setTimeout(() => {
+            startGame();
+            score = 0;
+            level = 1;
+            canClick = false;
+            carrotMatchCount = 0;
+            updateScore();
+            updateLevel();
+        }, 1500);
     }
 
     startGame();
