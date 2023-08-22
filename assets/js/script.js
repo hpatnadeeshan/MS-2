@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
             cardElement.style.backgroundRepeat = 'no-repeat';
             cardElement.style.backgroundPosition = 'center';
+            cardElement.style.backgroundColor = '#8BA799';
             if (level >= 16) {
                 cardElement.style.backgroundSize = '30% auto';
             } else {
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardElements = document.querySelectorAll(".card");
             cardElements.forEach((card) => {
                 card.style.backgroundImage = ""; // Clear images after 1.5s
-                card.style.backgroundColor = "grey";
+                card.style.backgroundColor = "#514538";
             });
             canClick = true; // Enable clicking after 1.5s
         }, 1500);
@@ -133,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!cardElement.classList.contains("flipped") && flippedCards.length < 2) {
             cardElement.classList.add("flipped");
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
+            cardElement.style.backgroundColor = '#8BA799';
             flippedCards.push({ element: cardElement, card: card });
 
             if (flippedCards.length === 2) {
@@ -162,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 card2.element.classList.remove('flipped');
                 card1.element.style.backgroundImage = ""; // Reset background image
                 card2.element.style.backgroundImage = ""; // Reset background image
+                card1.element.style.backgroundColor = "#514538";
+                card2.element.style.backgroundColor = "#514538";
                 flippedCards = [];
                 canClick = true;
             }, 1000); // Delay for better visibility
@@ -191,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
             assignRandomImages(level);
         } else {
             // Game completed
-            alert('Congratulations! You completed all levels.');
+            displayFeedback('Congratulations! You completed all levels.');
             initializeGame(); // Restart the game with a delay
         }
     }
