@@ -119,6 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             const cardElements = document.querySelectorAll(".card");
             cardElements.forEach((card) => {
+                card.style.transform = 'rotateY(180deg)';
+                /* Rotate the card around the Y-axis */
+                card.style.transition = 'transform 0.3s ease';
                 card.style.backgroundImage = ""; // Clear images after 1.5s
                 card.style.backgroundColor = "#514538";
             });
@@ -133,6 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function flipCard(cardElement, card) {
         if (!cardElement.classList.contains("flipped") && flippedCards.length < 2) {
             cardElement.classList.add("flipped");
+            cardElement.style.transform = 'rotateY(0deg)'; // Corrected
+            cardElement.style.transition = 'transform 0.3s ease'; // Corrected
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
             cardElement.style.backgroundColor = '#8BA799';
             flippedCards.push({ element: cardElement, card: card });
