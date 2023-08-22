@@ -245,12 +245,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display the modal with feedback
     function displayFeedback(message) {
-        const modalTitle = document.querySelector('.modal-title');
-        const modalBody = document.querySelector('.modal-body');
+        const modalTitle = document.querySelector('#feedback .modal-title');
+        const modalBody = document.querySelector('#feedback .modal-body');
 
         modalTitle.textContent = 'Feedback'; // Set modal title
         modalBody.textContent = message; // Set modal body text
-        $('.modal').modal('show');
+        $('#feedback').modal('show');
     }
 
 
