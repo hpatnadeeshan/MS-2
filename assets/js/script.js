@@ -232,10 +232,25 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(level);
     }
 
+
+
+    // Function to display the modal with feedback
+    function displayFeedback(message) {
+        const modalTitle = document.querySelector('.modal-title');
+        const modalBody = document.querySelector('.modal-body');
+
+        modalTitle.textContent = 'Feedback'; // Set modal title
+        modalBody.textContent = message; // Set modal body text
+        $('.modal').modal('show');
+    }
+
+
+
+
     // Game over function
 
     function gameOver(message) {
-        alert(message);
+        displayFeedback(message);
         setTimeout(() => {
             score = 0;
             level = 1;
@@ -249,3 +264,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startGame();
 });
+
