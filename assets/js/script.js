@@ -254,6 +254,13 @@ document.addEventListener("DOMContentLoaded", () => {
         modalFooter.style.display = 'none';
     }
 
+    // Function to hide the modal
+    function hideModal() {
+        const modal = document.querySelector('#feedback');
+        $(modal).modal('hide');
+    }
+
+
 
 
     // Function to start the game
