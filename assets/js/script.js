@@ -298,10 +298,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add an event listener to the reset button
     const resetButton = document.getElementById('resetButton');
     resetButton.addEventListener('click', () => {
-        gameOver("Restarting the game");
         hideModalButtons();
-        setTimeout(hideModal, 2000);
-        showModalButtons();
+        gameOver("Restarting the game");
+        setTimeout(() => {
+            hideModal();
+            showModalButtons();
+        }, 1500);
+        // gameOver("Restarting the game");
+        // hideModalButtons();
+        // setTimeout(hideModal, 2000);
+        // showModalButtons();
 
     });
 
@@ -319,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
             startGame();
             updateScore();
             updateLevel();
-        }, 3000);
+        }, 1500);
     }
 
     startGame();
