@@ -248,6 +248,13 @@ document.addEventListener("DOMContentLoaded", () => {
         rabbitProgress.style.right = position + "px";
     }
 
+    // Function to hide or disappear all buttons in the modal
+    function hideModalButtons() {
+        const modalFooter = document.querySelector('.modal-footer');
+        modalFooter.style.display = 'none';
+    }
+
+
 
     // Function to start the game
 
