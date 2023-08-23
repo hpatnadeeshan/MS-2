@@ -121,3 +121,14 @@ section p {
     margin-left: auto;
     margin-right: auto;
 }
+
+.line {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(9, 9, 9);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 30px;
+    z-index: 1;
+}
