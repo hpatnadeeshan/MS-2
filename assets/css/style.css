@@ -52,7 +52,7 @@ section p {
 }
 
 .controls {
-    max-width: 700px;
+    max-width: 600px;
 }
 
 .fa-solid {
@@ -147,4 +147,5 @@ section p {
     width: 30px;
     height: 30px;
     position: relative;
+    transition: left 1s ease-in-out;
 }
