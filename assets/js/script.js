@@ -287,6 +287,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetButton = document.getElementById('resetButton');
     resetButton.addEventListener('click', () => {
         gameOver("Restarting the game");
+        hideModalButtons();
+        setTimeout(hideModal, 2000);
+
     });
 
 
