@@ -199,7 +199,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (level <= maxLevel) {
             displayFeedback(`Level ${level}`);
             hideModalButtons();
-            setTimeout(hideModal, 700);
+            setTimeout(() => {
+                hideModal();
+                showModalButtons();
+            }, 700);
 
         } else {
             // Game completed
