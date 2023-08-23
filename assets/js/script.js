@@ -263,6 +263,12 @@ document.addEventListener("DOMContentLoaded", () => {
         $(modal).modal('hide');
     }
 
+    // Function to show or reappear all buttons in the modal
+    function showModalButtons() {
+        const modalFooter = document.querySelector('.modal-footer');
+        modalFooter.style.display = 'block';
+    }
+
 
 
 
@@ -292,6 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gameOver("Restarting the game");
         hideModalButtons();
         setTimeout(hideModal, 2000);
+        showModalButtons();
 
     });
 
