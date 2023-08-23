@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     let reason;
                     if (card.image === 'dog.png') {
                         reason = "You Lose!!! clicked a dog card.";
-                        gameOver(reason);
+                        displayFeedback(reason);
                     }
                 }
             });
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             // Game completed
             updateRabbitPosition(level);
-            gameOver('Congratulations! You completed all levels.');
+            displayFeedback('Congratulations! You completed all levels.');
         }
     }
 
@@ -225,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (score < 0) {
 
             let reason = "You Lose!!! Your score went negative.";
-            gameOver(reason);
+            displayFeedback(reason);
+            // gameOver(reason);
         } else {
             scoreDisplay.textContent = score;
         }
@@ -287,31 +288,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display the modal with feedback
     function displayFeedback(message) {
-        const modalTitle = document.querySelector('#feedback .modal-title');
         const modalBody = document.querySelector('#feedback .modal-body');
-
-        modalTitle.textContent = 'Feedback'; // Set modal title
         modalBody.textContent = message; // Set modal body text
         $('#feedback').modal('show');
-    };
-
-    // Add an event listener to the reset button
-    const resetButton = document.getElementById('resetButton');
-    resetButton.addEventListener('click', () => {
-        hideModalButtons();
-        gameOver("Restarting the game");
-        setTimeout(() => {
-            hideModal();
-            showModalButtons();
-        }, 1500);
-        // gameOver("Restarting the game");
-        // hideModalButtons();
-        // setTimeout(hideModal, 2000);
-        // showModalButtons();
-
-    });
-
-
+    }
 
     // Game over function
 
@@ -329,5 +309,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     startGame();
+
+
+    // Add an event listener to the reset button
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', () => {
+        hideModalButtons();
+        gameOver("Restarting the game");
+        setTimeout(() => {
+            hideModal();
+            showModalButtons();
+        }, 1500);
+    });
+
+    // Add an event listener to the restart button in feedback modal
+    const feedbackModal = document.querySelector('#feedback');
+    const restartButton = feedbackModal.querySelector('.modal-footer .btn-primary');
+    const exitButton = feedbackModal.querySelector('.modal-footer .btn-secondary');
+
+    restartButton.addEventListener('click', () => {
+        hideModalButtons();
+        gameOver("Restarting the game");
+        setTimeout(() => {
+            hideModal();
+            showModalButtons();
+        }, 1500);
+    });
 });
 
