@@ -1,26 +1,47 @@
+/* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Exo Font */
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+
 body {
+    font-family: Roboto, sans-serif;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 
 }
+
 
 .title {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .status-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+h1,
+p {
+    font-family: Roboto, sans-serif;
+}
+
+section p {
+    font-size: 20px;
 }
 
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    max-width: 700px;
-    min-height: 65vh;
+    max-width: 600px;
+    min-height: 60vh;
     margin: 0 auto;
 }
 
@@ -63,6 +84,10 @@ body {
 
 }
 
+.modal p {
+    font-family: Exo, sans-serif;
+}
+
 .card {
     transform-style: preserve-3d;
     /* Enable 3D transformations */
@@ -73,9 +98,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 80px;
-    /* Adjust the height as needed */
+    margin-bottom: 20px;
 }
 
-.controls span {
+.controls span,
+.controls a {
     margin: 0 90px;
 }
