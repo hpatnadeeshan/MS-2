@@ -197,7 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function moveToNextLevel() {
         level++;
         if (level <= maxLevel) {
-            assignRandomImages(level);
+            displayFeedback(`Level ${level}`);
+            hideModalButtons();
+            setTimeout(hideModal, 700);
+
         } else {
             // Game completed
             updateRabbitPosition(level);
