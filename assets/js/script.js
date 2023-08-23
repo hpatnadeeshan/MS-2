@@ -342,5 +342,11 @@ document.addEventListener("DOMContentLoaded", () => {
             showModalButtons();
         }, 1500);
     });
+
+    // Close the browser window
+
+    exitButton.addEventListener('click', () => {
+        window.close();
+    });
 });
 
