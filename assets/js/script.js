@@ -200,8 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
             assignRandomImages(level);
         } else {
             // Game completed
-            displayFeedback('Congratulations! You completed all levels.');
-            initializeGame(); // Restart the game with a delay
+            updateRabbitPosition(level);
+            gameOver('Congratulations! You completed all levels.');
         }
     }
 
@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateLevel() {
         const levelDisplay = document.querySelector('.level span');
         levelDisplay.textContent = level;
+        // updateRabbitPosition(level);
     }
 
     // Function to update the score
@@ -234,10 +235,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500); // Delay before restarting the game
     }
 
+    // Add this function to update the rabbit's position
+    function updateRabbitPosition(level) {
+        const rabbitProgress = document.querySelector(".rabbit-progress img");
+        const rabbitPath = document.querySelector(".rabbit-path");
+        const maxLevel = 15; // Maximum level
+
+        // Calculate the  position based on the level
+        const position = ((level - 1) / maxLevel) * (rabbitPath.offsetWidth - rabbitProgress.offsetWidth);
+
+        // Apply the position
+        rabbitProgress.style.right = position + "px";
+    }
+
+
     // Function to start the game
 
     function startGame() {
         assignRandomImages(level);
+        updateRabbitPosition(level);
         console.log(level);
     }
 
@@ -251,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalTitle.textContent = 'Feedback'; // Set modal title
         modalBody.textContent = message; // Set modal body text
         $('#feedback').modal('show');
-    }
+    };
 
     // Add an event listener to the reset button
     const resetButton = document.getElementById('resetButton');
@@ -273,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             startGame();
             updateScore();
             updateLevel();
-        }, 1500);
+        }, 3000);
     }
 
     startGame();
