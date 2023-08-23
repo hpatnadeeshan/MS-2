@@ -41,7 +41,7 @@ section p {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 600px;
-    min-height: 60vh;
+    min-height: 55vh;
     margin: 0 auto;
 }
 
@@ -97,7 +97,7 @@ section p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    /* height: 80px; */
     margin-bottom: 20px;
 }
 
@@ -105,4 +105,19 @@ section p {
 .controls a {
     margin: 0 90px;
     vertical-align: baseline;
+}
+
+/* Add styles for the bunny and hole */
+.rabbit-path {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* height: 80px; */
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
