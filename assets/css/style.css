@@ -142,3 +142,9 @@ section p {
     position: relative;
     margin-top: 45px;
 }
+
+.rabbit-progress img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
