@@ -207,7 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             // Game completed
             updateRabbitPosition(level);
-            displayFeedback('Congratulations! You completed all levels.');
+            gameOver('Congratulations! You completed all levels.');
+
         }
     }
 
@@ -264,6 +265,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to hide the modal
     function hideModal() {
         const modal = document.querySelector('#feedback');
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
         $(modal).modal('hide');
     }
 
@@ -289,6 +293,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to display the modal with feedback
     function displayFeedback(message) {
         const modalBody = document.querySelector('#feedback .modal-body');
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
         modalBody.textContent = message; // Set modal body text
         $('#feedback').modal('show');
     }
