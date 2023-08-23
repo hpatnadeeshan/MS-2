@@ -228,8 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to start in next level 
 
     function restartWithDelay() {
+        moveToNextLevel();
         setTimeout(() => {
-            moveToNextLevel();
             startGame();
             updateLevel();
         }, 1500); // Delay before restarting the game
