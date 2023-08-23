@@ -292,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display the modal with feedback
     function displayFeedback(message) {
+        showRestart();
         const modalBody = document.querySelector('#feedback .modal-body');
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'block';
@@ -315,7 +316,59 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500);
     }
 
-    startGame();
+    //show restart
+    function showRestart() {
+        const additionalButtonsContainer = document.querySelector('#additionalButtons');
+        const restartButton = document.querySelector('#restart');
+
+        // Show the restart button
+        restartButton.style.display = 'block';
+
+        // Hide the "Start" and "Help" buttons
+        additionalButtonsContainer.style.display = 'none';
+    }
+
+    //initialization
+
+    function addStartAndHelpButtons() {
+        const restartButton = document.querySelector('#restart');
+        restartButton.style.display = 'none';
+        const additionalButtonsContainer = document.querySelector('#additionalButtons');
+
+        // Create the Start button
+        const startButton = document.createElement('button');
+        startButton.textContent = 'Start';
+        startButton.classList.add('btn', 'btn-primary');
+
+        // Create the Help button
+        const helpButton = document.createElement('button');
+        helpButton.textContent = 'Help';
+        helpButton.classList.add('btn', 'btn-info');
+
+        // Add event listeners to the buttons
+        startButton.addEventListener('click', () => {
+            // Start the game when the "Start" button is clicked
+            startGame();
+            const feedbackModal = document.querySelector('#feedback');
+            $(feedbackModal).modal('hide');
+        });
+
+        helpButton.addEventListener('click', () => {
+            // Show the help content when the "Help" button is clicked
+            $('#helpModal').modal('show');
+        });
+
+        // Append the buttons to the container
+        additionalButtonsContainer.appendChild(startButton);
+        additionalButtonsContainer.appendChild(helpButton);
+        $('#feedback').modal('show');
+    }
+
+    // Call the function to add Start and Help buttons
+    addStartAndHelpButtons();
+
+
+    // startGame();
 
 
     // Add an event listener to the reset button
@@ -331,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add an event listener to the restart button in feedback modal
     const feedbackModal = document.querySelector('#feedback');
-    const restartButton = feedbackModal.querySelector('.modal-footer .btn-primary');
+    const restartButton = feedbackModal.querySelector('#restart');
     const exitButton = feedbackModal.querySelector('.modal-footer .btn-secondary');
 
     restartButton.addEventListener('click', () => {
