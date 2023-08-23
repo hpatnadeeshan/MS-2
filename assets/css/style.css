@@ -38,6 +38,10 @@ body {
     font-size: 2rem;
 }
 
+.fa-solid:hover {
+    cursor: pointer;
+}
+
 /* Apply background image */
 .background {
     position: fixed;

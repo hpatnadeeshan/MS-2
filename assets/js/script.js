@@ -253,6 +253,11 @@ document.addEventListener("DOMContentLoaded", () => {
         $('#feedback').modal('show');
     }
 
+    // Add an event listener to the reset button
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', () => {
+        gameOver("Restarting the game");
+    });
 
 
 
