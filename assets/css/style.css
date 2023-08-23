@@ -104,4 +104,5 @@ section p {
 .controls span,
 .controls a {
     margin: 0 90px;
+    vertical-align: baseline;
 }
