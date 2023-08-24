@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let canClick = false;
     let numCarrotCards;
     let carrotMatchCount = 0;
+    let timerInterval;
+    let timerStartTime;
 
     // Function to shuffle the cards
 
@@ -109,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (card.image === 'dog.png') {
                         reason = "You Lose!!! clicked a dog card.";
                         displayFeedback(reason);
+                        stopTimer();
                     }
                 }
             });
@@ -208,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Game completed
             updateRabbitPosition(level);
             gameOver('Congratulations! You completed all levels.');
+            stopTimer();
 
         }
     }
@@ -227,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let reason = "You Lose!!! Your score went negative.";
             displayFeedback(reason);
+            stopTimer();
             // gameOver(reason);
         } else {
             scoreDisplay.textContent = score;
@@ -283,6 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to start the game
 
     function startGame() {
+        startTimer();
         assignRandomImages(level);
         updateRabbitPosition(level);
         console.log(level);
@@ -401,5 +407,26 @@ document.addEventListener("DOMContentLoaded", () => {
     exitButton.addEventListener('click', () => {
         window.close();
     });
+
+
+    // Function to start the timer
+    function startTimer() {
+        timerStartTime = moment();
+        timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
+    }
+
+    // Function to update the timer
+    function updateTimer() {
+        const currentTime = moment();
+        const duration = moment.duration(currentTime.diff(timerStartTime));
+        const displayTime = moment(duration.asMilliseconds()).format('mm:ss');
+        document.getElementById('timerId').textContent = displayTime;
+    }
+
+    // Function to stop the timer
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+
 });
 
