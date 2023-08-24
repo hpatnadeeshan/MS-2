@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let carrotMatchCount = 0;
     let timerInterval;
     let timerStartTime;
+    let isInitial = true;
 
     // Function to shuffle the cards
 
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
+        isInitial = false;
     }
 
     // Function to select random cards for the game(only select carrots and traps & only select half number of total cards)
@@ -141,6 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function flipCard(cardElement, card) {
         console.log('flipCard');
+        if (isInitial) {
+            return;
+        }
         canClick = true;
         if (!cardElement.classList.contains("flipped") && flippedCards.length < 2 && canClick) {
             cardElement.classList.add("flipped");
