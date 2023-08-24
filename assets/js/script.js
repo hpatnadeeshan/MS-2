@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let score = 0;
     let level = 1;
     let flippedCards = [];
+    let flippedCardCount = 0;
     let canClick = false;
     let numCarrotCards;
     let carrotMatchCount = 0;
     let timerInterval;
     let timerStartTime;
     let isInitial = true;
+    let checkingForMatch = false;
 
     // Function to shuffle the cards
 
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             [array[i], array[j]] = [array[j], array[i]];
         }
         isInitial = false;
+        checkingForMatch = false;
     }
 
     // Function to select random cards for the game(only select carrots and traps & only select half number of total cards)
@@ -138,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     // Function to flip a card
 
     function flipCard(cardElement, card) {
         console.log('flipCard');
-        if (isInitial) {
+        flippedCardCount++;
+        if (isInitial || checkingForMatch) {
             return;
         }
         canClick = true;
@@ -156,10 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
             flippedCards.push({ element: cardElement, card: card });
 
             if (flippedCards.length === 2) {
+                checkingForMatch = true; // Set the flag to true
                 setTimeout(() => {
                     canClick = false;
                     checkForMatch();
-                }, 1000);
+                }, 1200);
             }
         }
     }
@@ -187,14 +191,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 card1.element.style.backgroundColor = "#514538";
                 card2.element.style.backgroundColor = "#514538";
                 flippedCards = [];
+                flippedCardCount = 0;
+                checkingForMatch = false;
             }, 1000); // Delay for better visibility
         }
 
         flippedCards = [];
+        flippedCardCount = 0;
         canClick = true;
         if (checkAllCarrotCardsFlipped()) {
             carrotMatchCount = 0;
             restartWithDelay();
+        } else {
+            checkingForMatch = false;//Reset the flag if there are more cards to check
         }
 
     }
