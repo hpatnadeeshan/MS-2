@@ -364,38 +364,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //initialization
-
     function addStartAndHelpButtons() {
-        const restartButton = document.querySelector('#restart');
-        restartButton.style.display = 'none';
-        const additionalButtonsContainer = document.querySelector('#additionalButtons');
+        // Remove the modal footer
+        const modalFooter = document.querySelector('#feedback .modal-footer');
+        modalFooter.style.display = 'none';
+        const modalBody = document.querySelector('#feedback .modal-body');
+        modalBody.innerHTML = modalBody.innerHTML = `
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <i class="fa-solid fa-circle-play fa-beat fa-5x" id="start" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+        </div>
+        <div class="col-auto">
+            <i class="fas fa-info-circle fa-5x" id="help" style="color: #e6d4c3; cursor: pointer; margin-right: 20px;"></i>
+        </div>
+        <div class="col-auto">
+            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+        </div>
+    </div>
+`;
 
-        // Create the Start button
-        const startButton = document.createElement('button');
-        startButton.textContent = 'Start';
-        startButton.classList.add('btn', 'btn-primary');
 
-        // Create the Help button
-        const helpButton = document.createElement('button');
-        helpButton.textContent = 'Help';
-        helpButton.classList.add('btn', 'btn-info');
+        const startIcon = document.getElementById('start');
+        const helpIcon = document.getElementById('help');
+        const exitIcon = document.getElementById('exit');
 
-        // Add event listeners to the buttons
-        startButton.addEventListener('click', () => {
-            // Start the game when the "Start" button is clicked
+        startIcon.addEventListener('click', () => {
+            // Start the game when the "Start" icon is clicked
             startGame();
             const feedbackModal = document.querySelector('#feedback');
             $(feedbackModal).modal('hide');
         });
 
-        helpButton.addEventListener('click', () => {
-            // Show the help content when the "Help" button is clicked
+        helpIcon.addEventListener('click', () => {
+            // Show the help content when the "Help" icon is clicked
             $('#helpModal').modal('show');
         });
 
-        // Append the buttons to the container
-        additionalButtonsContainer.appendChild(startButton);
-        additionalButtonsContainer.appendChild(helpButton);
+        exitIcon.addEventListener('click', () => {
+            // Close the feedback modal when the "Exit" icon is clicked
+            const feedbackModal = document.querySelector('#feedback');
+            $(feedbackModal).modal('hide');
+        });
+
         $('#feedback').modal('show');
     }
 
