@@ -47,6 +47,16 @@ section p {
     font-size: 20px;
 }
 
+@media (max-width: 350px) {
+    div.title h1 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,8 +124,24 @@ section p {
 
 .controls span,
 .controls a {
-    margin: 0 90px;
+
     vertical-align: baseline;
+    margin: 0 30px;
+
+    @media (min-width: 768px) {
+        margin: 0 70px;
+    }
+
+
+    @media (min-width: 992px) {
+        margin: 0 90px;
+    }
+
+    @media (max-width: 310px) {
+        margin: 0 20px;
+    }
+
+
 }
 
 /* Add styles for the bunny and hole */
