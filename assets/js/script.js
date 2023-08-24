@@ -340,7 +340,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function gameOver(message) {
         console.log('gameOver');
         displayFeedback(message);
+        hideModalButtons();
+
         setTimeout(() => {
+            hideModal();
             score = 0;
             level = 1;
             canClick = false;
@@ -353,15 +356,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //show restart
     function showRestart() {
-        const additionalButtonsContainer = document.querySelector('#additionalButtons');
-        const restartButton = document.querySelector('#restart');
+        const modalFooter = document.querySelector('#feedback .modal-footer');
 
-        // Show the restart button
-        restartButton.style.display = 'block';
+        // Set the inner HTML of the modal footer to include the icons
+        modalFooter.innerHTML = `
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <i class="fa-solid fa-rotate-right fa-beat fa-4x" id="restart" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+            </div>
 
-        // Hide the "Start" and "Help" buttons
-        additionalButtonsContainer.style.display = 'none';
+            <div class="col-auto">
+                <i class="fas fa-times-circle fa-4x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+            </div>
+        </div>
+    `;
+
+        // Show the modal footer
+        modalFooter.style.display = 'block';
+
+        // Get references to the start and exit icons
+        const restartIcon = document.querySelector('#restart');
+        const exitIcon = document.querySelector('#exit');
+
+        // Add event listeners to the icons
+        restartIcon.addEventListener('click', () => {
+            modalFooter.style.display = 'none'; // Hide the modal footer
+            gameOver("Restarting the game");
+            setTimeout(() => {
+                const feedbackModal = document.querySelector('#feedback');
+                $(feedbackModal).modal('hide');
+            }, 1500);
+        });
+
+        exitIcon.addEventListener('click', () => {
+            // Close the feedback modal when the "Exit" icon is clicked
+            const feedbackModal = document.querySelector('#feedback');
+            $(feedbackModal).modal('hide');
+        });
     }
+
 
     //initialization
     function addStartAndHelpButtons() {
@@ -427,25 +460,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500);
     });
 
-    // Add an event listener to the restart button in feedback modal
-    const feedbackModal = document.querySelector('#feedback');
-    const restartButton = feedbackModal.querySelector('#restart');
-    const exitButton = feedbackModal.querySelector('.modal-footer .btn-secondary');
-
-    restartButton.addEventListener('click', () => {
-        hideModalButtons();
-        gameOver("Restarting the game");
-        setTimeout(() => {
-            hideModal();
-            showModalButtons();
-        }, 1500);
-    });
 
     // Close the browser window
 
-    exitButton.addEventListener('click', () => {
-        window.close();
-    });
+    // exitButton.addEventListener('click', () => {
+    //     window.close();
+    // });
 
 
     // Function to start the timer
