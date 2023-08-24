@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
             cardElement.style.backgroundColor = '#8BA799';
             flippedCards.push({ element: cardElement, card: card });
+            console.log(flippedCards);
 
             if (flippedCards.length === 2) {
                 checkingForMatch = true; // Set the flag to true
@@ -181,6 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (card1.card.type === 'trap') {
                 score -= 5;
             }
+            flippedCards = [];
+            flippedCardCount = 0;
             updateScore();
         } else {
             setTimeout(() => {
@@ -196,16 +199,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000); // Delay for better visibility
         }
 
-        flippedCards = [];
-        flippedCardCount = 0;
-        canClick = true;
+
+
         if (checkAllCarrotCardsFlipped()) {
             carrotMatchCount = 0;
             restartWithDelay();
         } else {
             checkingForMatch = false;//Reset the flag if there are more cards to check
         }
-
+        canClick = true;
     }
 
     // Function to check if all carrot cards are flipped
