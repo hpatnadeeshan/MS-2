@@ -190,3 +190,15 @@ section p {
     position: relative;
     transition: left 1s ease-in-out;
 }
+
+div.modal-body {
+    max-height: 80vh;
+    padding: 4rem;
+}
+
+div.modal-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
