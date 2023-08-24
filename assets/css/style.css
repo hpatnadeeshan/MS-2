@@ -62,8 +62,12 @@ section p {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 600px;
-    min-height: 55vh;
+    min-height: 45vh;
     margin: 0 auto;
+
+    @media (min-width: 576px) {
+        min-height: 55vh;
+    }
 }
 
 
