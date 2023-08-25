@@ -29,17 +29,93 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 ### Wireframes
 
+[Landing page Mobile](./assets/readme/wireframes/landing-mobile.jpg)
+
+[Landing page Tablet](./assets/readme/wireframes/landing-tablet.jpg)
+
+[Landing page Desktop](./assets/readme/wireframes/landing-desktop.jpg)
+
+[Game page Mobile](./assets/readme/wireframes/game-mobile.jpg)
+
+[Game page Tablet](./assets/readme/wireframes/game-tablet.jpg)
+
+[Game page Desktop](./assets/readme/wireframes/game-desktop.jpg)
+
+[Help](./assets/readme/wireframes/help.jpg)
+
 ## Features
 
 ### Existing Features
 
+### Existing Features
+
+![Demo](./assets/readme/responsiveness.jpg)
+
+1. **Play button on the welcome screen:**
+   + The feature of the play button is to start the game.
+
+2. **Info button on the welcome screen:**
+   + The feature of this button is to provide information on how to play the game.
+
+3. **Exit button on the welcome screen:**
+   + Clicking this button allows you to exit the game.
+
+4. **Timer on the game page:**
+   + This displays how long you have been playing the game.
+
+5. **Score on the game page:**
+   + It shows your current score as you progress in the game.
+
+6. **Level on the game page:**
+   + It indicates which level you are currently on.
+
+7. **Game grid:**
+   + The game grid displays playing cards. When you click on a card, it flips. If it's a match, it stays flipped; otherwise, it flips back.
+
+8. **Info button on the game page:**
+   + This button provides instructions on how to play the game.
+
+9. **Restart button on the game page:**
+   + Clicking this button restarts the game.
+
+10. **Sound button on the game page:**
+    + You can use this button to turn sounds on or off.
+
+11. **Path for the bunny on the game page:**
+    + The bunny moves along this path as you progress in the game. When you win, the bunny reaches its hole.
+
+
 ### Future Features
+
+1. I wanto add a feature which will allow to add users to database with a username and password.
+2. I want add a feature that user can save their game.
+3. Add a high score leader board to the game to allow the user to add their name and record the moves and time.
+4. I want to add a more levels to the game then it will be harder in higher levels.
 
 ## Technologies Used
 
++ Google Chrome Dev tools for debugging
++ Google Lighthouse for audits
++ Git source control
++ VS Code as IDE
++ W3C validator used for HTML validating
++ Jigsaw Validator used for CSS validation
++ JShint used for Java Script validation
++ Coolors for color selection
++ Canva for background image editing
+
 ### Languages Used
 
++ HTML5
++ CSS3
++ Java Script
+
 ### Frameworks Libraries and Programmes Used
+
++ Bootstrap v4.6.2
++ jquery 3.6.4
++ Font Awsome
++ moment.js
 
 ## Testing
 
