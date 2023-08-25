@@ -485,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     } catch (error) {
-
+        document.getElementById("demo").innerHTML = err.message;
         console.error("An error occurred:", error);
     }
 
