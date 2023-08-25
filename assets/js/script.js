@@ -143,67 +143,79 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to flip a card
 
     function flipCard(cardElement, card) {
-        console.log('flipCard');
-        if (isInitial || checkingForMatch) {
-            return;
-        }
-        canClick = true;
-        if (!cardElement.classList.contains("flipped") && flippedCards.length < 2 && canClick) {
-            cardElement.classList.add("flipped");
-            cardElement.style.transform = 'rotateY(0deg)'; // Corrected
-            cardElement.style.transition = 'transform 0.3s ease'; // Corrected
-            cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
-            cardElement.style.backgroundColor = '#8BA799';
-            flippedCards.push({ element: cardElement, card: card });
-            console.log(flippedCards);
 
-            if (flippedCards.length === 2) {
-                checkingForMatch = true; // Set the flag to true
-                setTimeout(() => {
-                    canClick = false;
-                    checkForMatch();
-                }, 1200);
+        try {
+            console.log('flipCard');
+            if (isInitial || checkingForMatch) {
+                return;
             }
+            canClick = true;
+            if (!cardElement.classList.contains("flipped") && flippedCards.length < 2 && canClick) {
+                cardElement.classList.add("flipped");
+                cardElement.style.transform = 'rotateY(0deg)'; // Corrected
+                cardElement.style.transition = 'transform 0.3s ease'; // Corrected
+                cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
+                cardElement.style.backgroundColor = '#8BA799';
+                flippedCards.push({ element: cardElement, card: card });
+                console.log(flippedCards);
+
+                if (flippedCards.length === 2) {
+                    checkingForMatch = true; // Set the flag to true
+                    setTimeout(() => {
+                        canClick = false;
+                        checkForMatch();
+                    }, 1200);
+                }
+            }
+
+        } catch (error) {
+            document.getElementById("demo").innerHTML = err.message;
+            console.error("An error occurred:", error);
         }
+
     }
 
     // Function to check for match 
 
     function checkForMatch() {
-        console.log('checkForMatch');
-        const [card1, card2] = flippedCards;
+        try {
+            console.log('checkForMatch');
+            const [card1, card2] = flippedCards;
 
-        if (card1.card.type === card2.card.type) {
-            if (card1.card.type === 'carrot') {
-                score += 10;
-                ++carrotMatchCount;
-            } else if (card1.card.type === 'trap') {
-                score -= 5;
-            }
-            flippedCards = [];
-            updateScore();
-        } else {
-            setTimeout(() => {
-                card1.element.classList.remove('flipped');
-                card2.element.classList.remove('flipped');
-                card1.element.style.backgroundImage = ""; // Reset background image
-                card2.element.style.backgroundImage = ""; // Reset background image
-                card1.element.style.backgroundColor = "#514538";
-                card2.element.style.backgroundColor = "#514538";
+            if (card1.card.type === card2.card.type) {
+                if (card1.card.type === 'carrot') {
+                    score += 10;
+                    ++carrotMatchCount;
+                } else if (card1.card.type === 'trap') {
+                    score -= 5;
+                }
                 flippedCards = [];
-                checkingForMatch = false;
-            }, 1000); // Delay for better visibility
+                updateScore();
+            } else {
+                setTimeout(() => {
+                    card1.element.classList.remove('flipped');
+                    card2.element.classList.remove('flipped');
+                    card1.element.style.backgroundImage = ""; // Reset background image
+                    card2.element.style.backgroundImage = ""; // Reset background image
+                    card1.element.style.backgroundColor = "#514538";
+                    card2.element.style.backgroundColor = "#514538";
+                    flippedCards = [];
+                    checkingForMatch = false;
+                }, 1000); // Delay for better visibility
+            }
+
+            if (checkAllCarrotCardsFlipped()) {
+                carrotMatchCount = 0;
+                restartWithDelay();
+            } else {
+                checkingForMatch = false;//Reset the flag if there are more cards to check
+            }
+            canClick = true;
+
+        } catch (error) {
+            document.getElementById("demo").innerHTML = err.message;
+            console.error("An error occurred:", error);
         }
-
-
-
-        if (checkAllCarrotCardsFlipped()) {
-            carrotMatchCount = 0;
-            restartWithDelay();
-        } else {
-            checkingForMatch = false;//Reset the flag if there are more cards to check
-        }
-        canClick = true;
     }
 
     // Function to check if all carrot cards are flipped
@@ -216,22 +228,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to move to the next level
     function moveToNextLevel() {
-        console.log('moveToNextLevel');
-        level++;
-        if (level <= maxLevel) {
-            displayFeedback(`Level ${level}`);
-            hideModalButtons();
-            setTimeout(() => {
-                hideModal();
-                showModalButtons();
-            }, 700);
+        try {
+            console.log('moveToNextLevel');
+            level++;
+            if (level <= maxLevel) {
+                displayFeedback(`Level ${level}`);
+                hideModalButtons();
+                setTimeout(() => {
+                    hideModal();
+                    showModalButtons();
+                }, 700);
 
-        } else {
-            // Game completed
-            updateRabbitPosition(level);
-            gameOver('Congratulations! You completed all levels.');
-            stopTimer();
+            } else {
+                // Game completed
+                updateRabbitPosition(level);
+                gameOver('Congratulations! You completed all levels.');
+                stopTimer();
+            }
 
+        } catch (error) {
+            document.getElementById("demo").innerHTML = err.message;
+            console.error("An error occurred:", error);
         }
     }
 
@@ -305,8 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
-
     // Function to start the game
 
     function startGame() {
@@ -316,7 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateRabbitPosition(level);
         console.log(level);
     }
-
 
 
     // Function to display the modal with feedback
