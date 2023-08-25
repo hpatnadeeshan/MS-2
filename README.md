@@ -53,37 +53,57 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 1. **Play button on the welcome screen:**
    + The feature of the play button is to start the game.
+ 
     ![Play button](./assets/features/play.jpg)
 
 2. **Info button on the welcome screen:**
    + The feature of this button is to provide information on how to play the game.
+  
 ![Info button ](./assets/features/info-1.jpg)
-3. **Exit button on the welcome screen:**
+
+1. **Exit button on the welcome screen:**
    + Clicking this button allows you to exit the game.
+ 
 ![Exit button](./assets/features/exit.jpg)
-4. **Timer on the game page:**
+
+1. **Timer on the game page:**
    + This displays how long you have been playing the game.
+ 
 ![Timer](./assets/features/timer.jpg)
-5. **Score on the game page:**
+
+1. **Score on the game page:**
    + It shows your current score as you progress in the game.
+ 
 ![Score](./assets/features/score.jpg)
-6. **Level on the game page:**
+
+1. **Level on the game page:**
    + It indicates which level you are currently on.
+   
 ![Level](./assets/features/level.jpg)
-7. **Game grid:**
+
+1. **Game grid:**
    + The game grid displays playing cards. When you click on a card, it flips. If it's a match, it stays flipped; otherwise, it flips back.
+   
 ![Game grid](./assets/features/game-grid.jpg)
-8. **Info button on the game page:**
+
+1. **Info button on the game page:**
    + This button provides instructions on how to play the game.
+  
 ![Info button](./assets/features/info-2.jpg)
-9. **Restart button on the game page:**
+
+1. **Restart button on the game page:**
    + Clicking this button restarts the game.
+
 ![Restart](./assets/features/reset.jpg)
-10. **Sound button on the game page:**
+
+1.  **Sound button on the game page:**
     + You can use this button to turn sounds on or off.
+   
 ![Sound button](./assets/features/sound.jpg)
-11. **Path for the bunny on the game page:**
+
+1.  **Path for the bunny on the game page:**
     + The bunny moves along this path as you progress in the game. When you win, the bunny reaches its hole.
+  
 ![Path for the bunny](./assets/features/rabbit-path.jpg)
 
 ### Future Features
