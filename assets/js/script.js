@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     flipCard(cardElement, card);
                     let reason;
                     if (card.image === 'dog.png') {
-                        reason = "You Lose!!! clicked a dog card.";
+                        let reason = `<p>You Lose!!! clicked a dog card.</p>
+            <p>Your Score is: ${score}</p>`;
                         displayFeedback(reason);
                         stopTimer();
                     }
@@ -242,7 +243,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 // Game completed
                 updateRabbitPosition(level);
-                gameOver('Congratulations! You completed all levels.');
+                let reason = `<p>Congratulations! You completed all levels.</p>
+            <p>Your Score is: ${score}</p>`;
+                gameOver(reason);
                 stopTimer();
             }
 
@@ -267,7 +270,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (score < 0) {
 
-            let reason = "You Lose!!! Your score went negative.";
+            let reason = `<p>You Lose!!! Your score went negative.</p>
+            <p>Your Score is: 0</p>`;
             displayFeedback(reason);
             stopTimer();
             // gameOver(reason);
@@ -341,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        modalBody.textContent = message; // Set modal body text
+        modalBody.innerHTML = message; // Set modal body text
         $('#feedback').modal('show');
     }
 
@@ -412,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const modalFooter = document.querySelector('#feedback .modal-footer');
         modalFooter.style.display = 'none';
         const modalBody = document.querySelector('#feedback .modal-body');
-        modalBody.innerHTML = modalBody.innerHTML = `
+        modalBody.innerHTML = `
     <div class="row justify-content-center">
         <div class="col-auto">
             <i class="fa-solid fa-circle-play fa-beat fa-5x" id="start" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
