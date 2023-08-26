@@ -403,9 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         exitIcon.addEventListener('click', () => {
-            // Close the feedback modal when the "Exit" icon is clicked
-            const feedbackModal = document.querySelector('#feedback');
-            $(feedbackModal).modal('hide');
+            window.close();
         });
     }
 
@@ -448,9 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         exitIcon.addEventListener('click', () => {
-            // Close the feedback modal when the "Exit" icon is clicked
-            const feedbackModal = document.querySelector('#feedback');
-            $(feedbackModal).modal('hide');
+            window.close();
         });
 
         $('#feedback').modal('show');
@@ -499,9 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         exitIcon.addEventListener('click', () => {
-            // Close the feedback modal when the "Exit" icon is clicked
-            const feedbackModal = document.querySelector('#feedback');
-            $(feedbackModal).modal('hide');
+            window.close();
         });
 
         $('#feedback').modal('show');
