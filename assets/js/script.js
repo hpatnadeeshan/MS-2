@@ -105,7 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.style.backgroundRepeat = 'no-repeat';
             cardElement.style.backgroundPosition = 'center';
             cardElement.style.backgroundColor = '#8BA799';
-            if (level >= 16) {
+            if (level >= 15) {
+                cardElement.style.backgroundSize = '15% auto';
+            } else if (level >= 12) {
+                cardElement.style.backgroundSize = '20% auto';
+            } else if (level >= 9) {
                 cardElement.style.backgroundSize = '30% auto';
             } else {
                 cardElement.style.backgroundSize = '50% auto';
