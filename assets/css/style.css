@@ -130,22 +130,29 @@ section p {
 .controls a {
 
     vertical-align: baseline;
-    margin: 0 30px;
-
-    @media (min-width: 768px) {
-        margin: 0 70px;
-    }
+    margin: 0 40px;
 
 
-    @media (min-width: 992px) {
-        margin: 0 90px;
-    }
 
-    @media (max-width: 310px) {
+
+    @media (max-width: 500px) {
         margin: 0 20px;
     }
 
+    @media (max-width: 330px) {
+        margin: 0 15px;
+    }
 
+
+}
+
+
+@media (max-width: 330px) {
+
+    .controls .fa-solid,
+    .controls a {
+        font-size: 24px;
+    }
 }
 
 /* Add styles for the bunny and hole */
@@ -258,4 +265,8 @@ div.modal-content {
 
 #helpModal li {
     margin-bottom: 10px;
+}
+
+#soundButton {
+    display: none;
 }
