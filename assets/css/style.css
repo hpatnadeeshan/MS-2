@@ -202,3 +202,37 @@ div.modal-content {
     border-radius: 10px;
     color: white;
 }
+
+@media (max-width: 500px) {
+
+    #start.fa-5x,
+    #help.fa-5x,
+    #exit.fa-5x {
+        font-size: 4em;
+    }
+
+    div.modal-body {
+        padding: 2rem;
+    }
+
+    div.col-auto {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 330px) {
+
+    #start.fa-5x,
+    #help.fa-5x,
+    #exit.fa-5x {
+        font-size: 3em;
+    }
+
+    div.modal-body {
+        padding: 1rem;
+    }
+
+    div.col-auto {
+        padding-right: 0;
+    }
+}
