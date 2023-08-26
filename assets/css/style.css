@@ -238,3 +238,12 @@ div.modal-content {
         padding-right: 0;
     }
 }
+
+.modal-header button.close {
+    margin-left: 0;
+}
+
+.modal-title {
+    margin-right: auto;
+    margin-left: auto;
+}
