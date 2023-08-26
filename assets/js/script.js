@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
             startGame();
             updateScore();
             updateLevel();
-        }, 1500);
+        }, 5000);
     }
 
     //show restart
