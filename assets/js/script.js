@@ -456,6 +456,57 @@ document.addEventListener("DOMContentLoaded", () => {
         $('#feedback').modal('show');
     }
 
+
+    function clickHome() {
+        // Remove the modal footer
+        const modalFooter = document.querySelector('#feedback .modal-footer');
+        modalFooter.style.display = 'none';
+        const modalBody = document.querySelector('#feedback .modal-body');
+        modalBody.innerHTML = `
+    <div class="row justify-content-center">
+        <div class="col-auto">
+             <i class="fa-solid fa-rotate-right fa-5x" id="restart" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+        </div>
+        <div class="col-auto">
+            <i class="fa-solid fa-eject fa-rotate-90 fa-5x" id="resume" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+
+        </div>
+        <div class="col-auto">
+            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+        </div>
+    </div>
+`;
+
+
+        const restartIcon = document.getElementById('restart');
+        const resumeIcon = document.getElementById('resume');
+        const exitIcon = document.getElementById('exit');
+
+        // Add event listeners to the icons
+        restartIcon.addEventListener('click', () => {
+            modalFooter.style.display = 'none'; // Hide the modal footer
+            gameOver("Restarting the game");
+            setTimeout(() => {
+                const feedbackModal = document.querySelector('#feedback');
+                $(feedbackModal).modal('hide');
+            }, 1500);
+        });
+
+        resumeIcon.addEventListener('click', () => {
+            // Close the feedback modal when the "Exit" icon is clicked
+            const feedbackModal = document.querySelector('#feedback');
+            $(feedbackModal).modal('hide');
+        });
+
+        exitIcon.addEventListener('click', () => {
+            // Close the feedback modal when the "Exit" icon is clicked
+            const feedbackModal = document.querySelector('#feedback');
+            $(feedbackModal).modal('hide');
+        });
+
+        $('#feedback').modal('show');
+
+    }
     // Call the function to add Start and Help buttons
     addStartAndHelpButtons();
 
@@ -472,6 +523,13 @@ document.addEventListener("DOMContentLoaded", () => {
             hideModal();
             showModalButtons();
         }, 1500);
+    });
+
+    // Add an event listener to the reset button
+    const homeButton = document.getElementById('homeButton');
+    homeButton.addEventListener('click', () => {
+        clickHome();
+
     });
 
 
@@ -498,10 +556,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
-try {
-
-} catch (error) {
-    document.getElementById("demo").innerHTML = err.message;
-    console.error("An error occurred:", error);
-}
