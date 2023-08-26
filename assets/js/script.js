@@ -118,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.addEventListener("click", () => {
                 if (canClick) {
                     flipCard(cardElement, card);
-                    let reason;
                     if (card.image === 'dog.png') {
                         let reason = `<p>You Lose!!! clicked a dog card.</p>
             <p>Your Score is: ${score}</p>`;
@@ -300,9 +299,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const rabbitProgress = document.querySelector(".rabbit-progress img");
         const rabbitPath = document.querySelector(".rabbit-path");
         const maxLevel = 15; // Maximum level
-
+        // console.log(rabbitPath.offsetWidth);
+        // console.log(rabbitProgress.offsetWidth);
         // Calculate the  position based on the level
-        const position = ((level - 1) / maxLevel) * (rabbitPath.offsetWidth - rabbitProgress.offsetWidth);
+        const position = ((level - 1) / (maxLevel + 1)) * (rabbitPath.offsetWidth - rabbitProgress.offsetWidth);
 
         // Apply the position
         rabbitProgress.style.right = position + "px";
