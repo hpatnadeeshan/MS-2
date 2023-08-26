@@ -553,6 +553,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    const soundButton = document.getElementById('soundButton');
+    const muteButton = document.getElementById('muteButton');
+    const soundIcon = soundButton.querySelector('i');
+    const muteIcon = muteButton.querySelector('i');
+    const backgroundMusic = new Audio('./assets/audio/background.mp3');
+    backgroundMusic.loop = true;
+    let isSoundOn = false;
+
+    // Event listener for the "Sound" button
+    soundButton.addEventListener('click', () => {
+        if (isSoundOn) {
+            backgroundMusic.pause();
+
+        } else {
+
+            backgroundMusic.play();
+            isSoundOn = true;
+
+        }
+        backgroundMusic.play();
+        soundButton.style.display = 'none';
+        muteButton.style.display = 'inline';
+
+        // Toggle classes to change the icon
+        soundIcon.classList.remove('fa-volume-low');
+        soundIcon.classList.add('fa-volume-xmark');
+    });
+
+    // Event listener for the "Mute" button
+    muteButton.addEventListener('click', () => {
+        if (isSoundOn) {
+            backgroundMusic.pause();
+
+        } else {
+
+            backgroundMusic.play();
+            isSoundOn = true;
+
+        }
+        soundButton.style.display = 'inline';
+        muteButton.style.display = 'none';
+
+        // Toggle classes to change the icon
+        muteIcon.classList.remove('fa-volume-xmark');
+        muteIcon.classList.add('fa-volume-low');
+    });
+
+
+
 
 
 });
