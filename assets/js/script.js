@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerStartTime;
     let isInitial = true;
     let checkingForMatch = false;
+    let gameStatus;
 
     // Function to shuffle the cards
 
@@ -245,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } else {
                 // Game completed
+                gameStatus = 'Won';
                 updateRabbitPosition(level);
                 let reason = `<p>Congratulations! You completed all levels.</p>
             <p>Your Score is: ${score}</p>`;
@@ -359,17 +361,30 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('gameOver');
         displayFeedback(message);
         hideModalButtons();
+        if (gameStatus === 'Won') {
+            setTimeout(() => {
+                hideModal();
+                score = 0;
+                level = 1;
+                canClick = false;
+                carrotMatchCount = 0;
+                startGame();
+                updateScore();
+                updateLevel();
+            }, 5000);
+        } else {
+            setTimeout(() => {
+                hideModal();
+                score = 0;
+                level = 1;
+                canClick = false;
+                carrotMatchCount = 0;
+                startGame();
+                updateScore();
+                updateLevel();
+            }, 1500);
+        }
 
-        setTimeout(() => {
-            hideModal();
-            score = 0;
-            level = 1;
-            canClick = false;
-            carrotMatchCount = 0;
-            startGame();
-            updateScore();
-            updateLevel();
-        }, 5000);
     }
 
     //show restart
