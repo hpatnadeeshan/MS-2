@@ -266,6 +266,29 @@ But the following user story has not been addressed because I deemed it unimport
 
 ### Problems Encountered
 
+While I was developing the game I encountered several bugs.However I identifeid main 3 bugs that are critical for the game.
+
+1. **Can flip cards while checking for a match.**
+2. **Can flip more than 2 cards at a time.**
+3. **Can flip cards while loading the cards at the start of a level.**
+
+I identified a bug during my game testing phase where players could flip cards while the cards were still loading at the start of a level. To address this issue, I introduced an 'isInitial' variable.
+
+![Variable declaration](./assets/debug/unclickable-when-loading-cards/1.jpg)
+
+At the beginning of the game, the variable's value is set to 'true.' It remains 'true' until all the cards have been loaded at the start of a level and flipped back (in other words, at the end of the 'assignRandomImages' function).
+
+![Value set to false](./assets/debug/unclickable-when-loading-cards/3.jpg)
+
+Furthermore, the 'isInitial' variable is set to 'true' again when moving to the next level, which occurs if the 'checkAllCarrotCardsFlipped' function returns 'true' in the 'checkForMatch' function.
+
+![Value set to true](./assets/debug/unclickable-when-loading-cards/4.jpg)
+
+Now, if a player attempts to flip a card before all the cards have been flipped back, the 'flip' function will be halted by checking the 'isInitial' variable. If the value is 'true,' the 'flip' function will return without executing any further lines of code within the 'flip' function.
+
+![check whether value is true](./assets/debug/unclickable-when-loading-cards/2.jpg)
+
+
 ## Deployment
 
 ### Deployment through GitHub Pages
