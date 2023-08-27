@@ -31,6 +31,8 @@ I used a color space to select a color palette for the game, which is generated 
 
 #### Typography
 
+I used the Roboto and Exo Google fonts for this game. Roboto is used for the game title, while Exo is used for the status bar texts and information texts in the modals.
+
 ### Wireframes
 
 [Landing page Mobile](./assets/readme/wireframes/landing-mobile.jpg)
@@ -150,7 +152,7 @@ Validation is done throughout the development and all the error and warnings are
 
 following validators have been used to validate HTML and CSS codes.
 
-### [<em>HTML Validator</em>
+### <em>HTML Validator</em>
 
 + [W3C validator](https://validator.w3.org/) used for HTML validating
 
