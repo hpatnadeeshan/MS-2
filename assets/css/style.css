@@ -275,3 +275,8 @@ div.modal-content {
 #soundButton {
     display: none;
 }
+
+#helpModal li,
+.modal-title {
+    font-family: exo;
+}
