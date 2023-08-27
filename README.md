@@ -25,6 +25,10 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 #### Colour Scheme
 
+I used a color space to select a color palette for the game, which is generated based on the background color. I primarily applied these colors to the cards and buttons within the feedback modal.
+
+![Color Pallet](./assets/features/color.jpg)
+
 #### Typography
 
 ### Wireframes
@@ -44,8 +48,6 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 [Help](./assets/readme/wireframes/help.jpg)
 
 ## Features
-
-### Existing Features
 
 ### Existing Features
 
@@ -110,8 +112,9 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 1. I wanto add a feature which will allow to add users to database with a username and password.
 2. I want add a feature that user can save their game.
-3. Add a high score leader board to the game to allow the user to add their name and record the moves and time.
-4. I want to add a more levels to the game then it will be harder in higher levels.
+3. I want add sound effects for animation of the game.
+4. Add a high score leader board to the game to allow the user to add their name and record the moves and time.
+5. I want to add a more levels to the game then it will be harder in higher levels.
 
 ## Technologies Used
 
@@ -119,10 +122,11 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 + Google Lighthouse for audits
 + Git source control
 + VS Code as IDE
++ CodeAnywhere as online integrated development environment (IDE)
 + W3C validator used for HTML validating
 + Jigsaw Validator used for CSS validation
-+ JShint used for Java Script validation
-+ Coolors for color selection
++ JSHint used for Java Script validation
++ Color space for color selection
 + Canva for background image editing
 
 ### Languages Used
@@ -142,7 +146,36 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 ### Validator Testing
 
-### Lighthouse Testing
+Validation is done throughout the development and all the error and warnings are fixed.
+
+following validators have been used to validate HTML and CSS codes.
+
+### [<em>HTML Validator</em>
+
++ [W3C validator](https://validator.w3.org/) used for HTML validating
+
+![Html Validation](./assets/testing/)
+
+### <em>CSS Validator</em>
+
++ [CSS validation](https://jigsaw.w3.org/css-validator/) used for CSS validation
+
+![Sound button](./assets/testing/)
+
+### <em>Java Script Validator</em>
+
++ [JSHint Validator](https://jshint.com/) used for CSS validation
+
+![Java Script Validation](./assets/testing/)
+
+### Testing Accessibility and Performance
+
+I used google lighthouse to check Accessibility and Performance.
+
+|                    | Performance | Accessibility | Best Practices | SEO |
+| ------------------ | ----------- | ------------- | -------------- | --- |
+| [Desktop view](./assets/testing/lighthouse-desktop.jpg)      | 99%         | 100%          | 100%           | 90% |
+| [Mobile view](./assets/testing/lighthouse-mobile.jpg)       | 84%         | 100%          | 100%           | 92% |
 
 ### Responsiveness
 
@@ -158,6 +191,22 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 ### Code
 
+1. Feedback modal icons, and footer icons were taken from Font Awesome.
+2. Bootstrap framework used for modal, flex box and responsiveness throughout the website.
+3. Google Fonts used in the website (Roboto & Exo)
+4. moment.js library used for timer functions.
+5. jQuery library used throughout the code.
+6. w3schools was used as a general source of knowledge
+7. youtube inspiration was taken for some sections.
+
 ### Media
 
+![Tunetank](https://tunetank.com/) for background audio
+![Pixabay](https://pixabay.com/) for favicon icon
+![flaticon](https://www.flaticon.com/) for image of cards
+
 ### Acknowledgements
+
++ Creating a README(How to put together a well-documented README for your projects) by Code Institute
++ I would like to acknowledge my mentor Rory Patrick for his review and valuable feedback throughout the project.
++ I would like to thank my wife for testing the game and feedback.
