@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { type: 'carrot', image: 'carrot.png', score: 10 },
         { type: 'trap', image: 'trap.png', score: -5 },
     ];
-    const loseCard = { type: "dog", score: 0, image: "dog.png" };
+    const loseCard = { type: "dog", image: "dog.png", score: 0 };
     const maxLevel = 15;
     const cardsEachLevel = [6, 6, 6, 9, 9, 9, 9, 9, 12, 12, 12, 12, 12, 15, 15];
 
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to shuffle the cards
 
     function shuffle(array) {
-        console.log('shuffle');
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to select random cards for the game(only select carrots and traps & only select half number of total cards)
 
     function selectCards(totalCount) {
-        console.log('selectCards');
         const selectedCards = [];
 
         // Ensure each card type is selected at least once
@@ -61,26 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const randomNum = Math.random() * cards.length;
             const randomIndex = Math.floor(randomNum);
             selectedCards.push(cards[randomIndex]);
-            // console.log(randomNum);
         }
         //Number of carrot cards
 
         numCarrotCards = selectedCards.filter(card => card.type === 'carrot').length;
-
-        // console.log(selectedCards);
         return selectedCards;
     }
     // Function to assign random images to cards
     function assignRandomImages(level) {
-        console.log('assignRandomImages');
         const levelCards = cardsEachLevel[level - 1];
 
         //  Select random cards
         const selectedRandomCards = selectCards(levelCards);
-        // console.log(selectedRandomCards);
-
         const allCards = selectedRandomCards.concat(selectedRandomCards); // Duplicate to create pairs
-        // console.log(allCards);
         //push dog cards
         if (levelCards === 9) {
             allCards.push(loseCard);
@@ -97,10 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cardGrid = document.querySelector(".card-grid");
         cardGrid.innerHTML = ""; // Clear existing cards
-        // console.log(allCards);
         allCards.forEach((card) => {
             const cardElement = document.createElement("div");
-            // console.log(++a);
             cardElement.classList.add("card");
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
             cardElement.style.backgroundRepeat = 'no-repeat';
@@ -148,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function flipCard(cardElement, card) {
 
         try {
-            console.log('flipCard');
             if (isInitial || checkingForMatch) {
                 return;
             }
@@ -160,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
                 cardElement.style.backgroundColor = '#8BA799';
                 flippedCards.push({ element: cardElement, card: card });
-                console.log(flippedCards);
 
                 if (flippedCards.length === 2) {
                     checkingForMatch = true; // Set the flag to true
@@ -182,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function checkForMatch() {
         try {
-            console.log('checkForMatch');
             const [card1, card2] = flippedCards;
 
             if (card1.card.type === card2.card.type) {
@@ -223,7 +209,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to check if all carrot cards are flipped
     function checkAllCarrotCardsFlipped() {
-        console.log('checkAllCarrotCardsFlipped');
         let allCarrotCardsFlipped = carrotMatchCount === numCarrotCards;
         return allCarrotCardsFlipped;
     }
@@ -232,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to move to the next level
     function moveToNextLevel() {
         try {
-            console.log('moveToNextLevel');
             level++;
             if (level <= maxLevel) {
                 displayFeedback(`Level ${level}`);
@@ -260,7 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to update the level
     function updateLevel() {
-        console.log('updateLevel');
         const levelDisplay = document.querySelector('.level span');
         levelDisplay.textContent = level;
         // updateRabbitPosition(level);
@@ -268,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to update the score
     function updateScore() {
-        console.log('updateScore');
         const scoreDisplay = document.querySelector('.score span');
 
         if (score < 0) {
@@ -286,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to start in next level 
 
     function restartWithDelay() {
-        console.log('restartWithDelay');
         moveToNextLevel();
         if (gameStatus === 'Won') {
             return;
@@ -302,8 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rabbitProgress = document.querySelector(".rabbit-progress img");
         const rabbitPath = document.querySelector(".rabbit-path");
         const maxLevel = 15; // Maximum level
-        // console.log(rabbitPath.offsetWidth);
-        // console.log(rabbitProgress.offsetWidth);
+
         // Calculate the  position based on the level
         const position = ((level - 1) / (maxLevel + 1)) * (rabbitPath.offsetWidth - rabbitProgress.offsetWidth);
 
@@ -336,17 +316,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to start the game
 
     function startGame() {
-        console.log('startGame');
         startTimer();
         assignRandomImages(level);
         updateRabbitPosition(level);
-        console.log(level);
     }
 
 
     // Function to display the modal with feedback
     function displayFeedback(message) {
-        console.log('displayFeedback');
         showRestart();
         const modalBody = document.querySelector('#feedback .modal-body');
         const overlay = document.getElementById('overlay');
@@ -359,7 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Game over function
 
     function gameOver(message) {
-        console.log('gameOver');
         displayFeedback(message);
         hideModalButtons();
         if (gameStatus === 'Won') {
@@ -524,9 +500,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Call the function to add Start and Help buttons
     addStartAndHelpButtons();
-
-
-    // startGame();
 
 
     // Add an event listener to the reset button
