@@ -64,8 +64,10 @@ section p {
     max-width: 600px;
     min-height: 45vh;
     margin: 0 auto;
+}
 
-    @media (min-width: 576px) {
+@media (min-width: 576px) {
+    .card-grid {
         min-height: 55vh;
     }
 }
@@ -131,19 +133,22 @@ section p {
 
     vertical-align: baseline;
     margin: 0 40px;
+}
 
+@media (max-width: 500px) {
 
-
-
-    @media (max-width: 500px) {
+    .controls span,
+    .controls a {
         margin: 0 20px;
     }
+}
 
-    @media (max-width: 330px) {
+@media (max-width: 330px) {
+
+    .controls span,
+    .controls a {
         margin: 0 15px;
     }
-
-
 }
 
 
