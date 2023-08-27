@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
-        isInitial = false;
         checkingForMatch = false;
     }
 
@@ -128,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.style.backgroundColor = "#514538";
             });
             canClick = true; // Enable clicking after 1.5s
+            isInitial = false;
         }, 1500);
     }
 
@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (checkAllCarrotCardsFlipped()) {
                 carrotMatchCount = 0;
+                isInitial = true;
                 restartWithDelay();
             } else {
                 checkingForMatch = false;//Reset the flag if there are more cards to check
