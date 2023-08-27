@@ -231,6 +231,14 @@ The game is designed to be responsive and optimized for all devices, including m
 
 ### Deployment through GitHub Pages
 
+GitHub pages were used to deploy the site. Selected the master Branch from the source section drop-down menu by navigating the settings tab in the GitHub repository. The detailed ribbon appeared and the page was automatically refreshed with successful deployment.
+
+The live link can be found here: <https://hpatnadeeshan.github.io/MS-2>
+
+### Deployment locally
+
+clone or download the website repository as a zip file or GitHub desktop method. Open the directory through an IDE and Run the website on a local server.
+
 ## Credits
 
 ### Code
