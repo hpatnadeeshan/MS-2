@@ -270,7 +270,18 @@ While I was developing the game I encountered several bugs.However I identifeid 
 
 1. **Can flip cards while checking for a match.**
 2. **Can flip more than 2 cards at a time.**
-3. **Can flip cards while loading the cards at the start of a level.**
+
+I encountered an issue where players could flip more than two cards at a time in the game. To handle this situation, I needed to control when players were allowed to click on cards. I realized that this control should be implemented after loading the images and flipping back all the cards (in the 'assignRandomImages' function) and also after a player clicks the first card. Clicking on any other card should be disabled until the 'checkForMatch' function has completed. Furthermore, clicking should be avoided when the game is over until it restarts and all the cards are flipped back.
+
+To address this, I declared a variable called 'canClick' and initially set its value to 'false.' Then, at the end of the 'assignRandomImages' function, I changed its value to 'true.' Subsequently, when a player flips two cards, I set the variable's value back to 'false.' However, in my previous code, I failed to check the variable's value before allowing a flip. During debugging, I added this check, ensuring that the 'flip' function only works if the variable's value is 'true.'
+
+<img src="./assets/debug/issue-can-click-more-than-2-cards/older-1.jpg" alt="Old code"> <img src="./assets/debug/issue-can-click-more-than-2-cards/1.jpg" alt="New Code">
+
+One other mistake I made was changing the variable's value to 'true' in the middle of the 'checkForMatch' function. I corrected this by moving it to the end of the function.
+
+<img src="./assets/debug/issue-can-click-more-than-2-cards/2-older.jpg" alt="Old code"> <img src="./assets/debug/issue-can-click-more-than-2-cards/2.jpg" alt="New Code">
+
+1. **Can flip cards while loading the cards at the start of a level.**
 
 I identified a bug during my game testing phase where players could flip cards while the cards were still loading at the start of a level. To address this issue, I introduced an 'isInitial' variable.
 
