@@ -280,3 +280,7 @@ div.modal-content {
 .modal-title {
     font-family: exo;
 }
+
+.hand-cursor {
+    cursor: pointer;
+}

@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cardGrid.innerHTML = ""; // Clear existing cards
         allCards.forEach((card) => {
             const cardElement = document.createElement("div");
-            cardElement.classList.add("card");
+            cardElement.classList.add("card", "hand-cursor");
             cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
             cardElement.style.backgroundRepeat = 'no-repeat';
             cardElement.style.backgroundPosition = 'center';
@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cardElement.style.transition = 'transform 0.3s ease'; // Corrected
                 cardElement.style.backgroundImage = `url('./assets/images/${card.image}')`;
                 cardElement.style.backgroundColor = '#8BA799';
+                cardElement.classList.remove("hand-cursor");
                 flippedCards.push({ element: cardElement, card: card });
 
                 if (flippedCards.length === 2) {
@@ -182,6 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateScore();
             } else {
                 setTimeout(() => {
+                    card1.element.classList.add("hand-cursor");
+                    card2.element.classList.add("hand-cursor");
                     card1.element.classList.remove('flipped');
                     card2.element.classList.remove('flipped');
                     card1.element.style.backgroundImage = ""; // Reset background image
@@ -405,7 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    //initialization
     function addStartAndHelpButtons() {
         // Remove the modal footer
         const modalFooter = document.querySelector('#feedback .modal-footer');
