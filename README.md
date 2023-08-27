@@ -247,6 +247,23 @@ The game is designed to be responsive and optimized for all devices, including m
 
 ### Testing User Stories
 
+As a user/player I see most of the user stories are staisfied
+
++ As a player, I can see a grid of face-down cards containing images of carrots, traps, and a dog on the back of each card when I start the game.
++ As a player I can flipped 2 cards at a time.
++ As a player, I see earn points when I flip over two matching cards with images of carrots and lose points when I flip over two matching cards with trap images.
++ As a player, I see the game to end immediately if I select a card with a dog image, resulting in a loss.
++ As a player, I can  play continuously until the rabbit reaches its hole, unless I lose.
++ As a player, I can see that game have levels and a total score, and I want these to be visible at all times in status bar.
++ As a player,I can see how much time it took to win the game in status bar.
++ As a player, I can reset the game at anytime during play restart button in controls.
++ As a player, I see the game to have animations, a visually appealing design, sound effects, and responsiveness across all devices.
++ As a player, I see that the game to be enjoyable, strategic, challenging, and to encourage the use of memory skills.
+
+But the following user story has not been addressed because I deemed it unimportant, and it may vary from one game to another.
+
++ As a player I cant see the number of movement I have done
+
 ### Problems Encountered
 
 ## Deployment
