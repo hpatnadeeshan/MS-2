@@ -373,11 +373,11 @@ document.addEventListener("DOMContentLoaded", () => {
         modalFooter.innerHTML = `
         <div class="row justify-content-center">
             <div class="col-auto">
-                <i class="fa-solid fa-rotate-right fa-beat fa-4x" id="restart" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+                <i class="fa-solid fa-rotate-right fa-beat fa-4x" id="restart" style="color: #C3A689; cursor: pointer; margin-right: 20px;"></i>
             </div>
 
             <div class="col-auto">
-                <i class="fas fa-times-circle fa-4x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+                <i class="fas fa-times-circle fa-4x" id="exit" style="color: #C1DECF; cursor: pointer;"></i>
             </div>
         </div>
     `;
@@ -414,13 +414,13 @@ document.addEventListener("DOMContentLoaded", () => {
         modalBody.innerHTML = `
     <div class="row justify-content-center">
         <div class="col-auto">
-            <i class="fa-solid fa-circle-play fa-beat fa-5x" id="start" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+            <i class="fa-solid fa-circle-play fa-beat fa-5x" id="start" style="color: #C3A689; cursor: pointer; margin-right: 20px;"></i>
         </div>
         <div class="col-auto">
             <i class="fas fa-info-circle fa-5x" id="help" style="color: #e6d4c3; cursor: pointer; margin-right: 20px;"></i>
         </div>
         <div class="col-auto">
-            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #C1DECF; cursor: pointer;"></i>
         </div>
     </div>
 `;
@@ -458,14 +458,14 @@ document.addEventListener("DOMContentLoaded", () => {
         modalBody.innerHTML = `
     <div class="row justify-content-center">
         <div class="col-auto">
-             <i class="fa-solid fa-rotate-right fa-5x" id="restart" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+             <i class="fa-solid fa-rotate-right fa-5x" id="restart" style="color: #C3A689; cursor: pointer; margin-right: 20px;"></i>
         </div>
         <div class="col-auto">
-            <i class="fa-solid fa-eject fa-rotate-90 fa-5x" id="resume" style="color: #215bc0; cursor: pointer; margin-right: 20px;"></i>
+            <i class="fa-solid fa-eject fa-rotate-90 fa-5x" id="resume" style="color: #e6d4c3; cursor: pointer; margin-right: 20px;"></i>
 
         </div>
         <div class="col-auto">
-            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #1f5141; cursor: pointer;"></i>
+            <i class="fas fa-times-circle fa-5x" id="exit" style="color: #C1DECF; cursor: pointer;"></i>
         </div>
     </div>
 `;
