@@ -23,6 +23,26 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 ### Design
 
+ ##### Game Objective:
+
+The objective of Bunny Hop Memory is to guide a bunny safely to its home while playing a memory card game. player needs to match pairs of carrot cards to earn points while avoiding traps and dog cards. The game consists of multiple levels, and player's goal is to successfully complete all levels.
+
+ ##### Game Elements:
+
+**Cards:** The game is primarily played with a set of cards. Each card can be one of three types: carrot, trap, or dog.
+
+_Carrot Cards:_ Matching pairs of carrot cards earns player 10 points.
+_Trap Cards:_ Matching trap cards results in a loss of 5 points.
+_Dog Cards:_ Selecting a dog card ends the game, and player loses.
+
+**Timer:** There's a timer displayed on the screen to keep track of the time player spends playing the game.
+
+**Score:** player's current score is displayed on the screen. Player earns points by matching carrot cards and loses points for matching trap cards.
+
+**Levels:** The game consists of multiple levels, each with an increasing number of cards. Player needs to complete each level to progress in the game.
+
+**Rabbit Path:** A visual representation of the bunny's progress is shown on a path. As you complete levels, the bunny moves closer to its home.
+
 #### Colour Scheme
 
 I used a color space to select a color palette for the game, which is generated based on the background color. I primarily applied these colors to the cards and buttons within the feedback modal.
