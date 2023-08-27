@@ -154,19 +154,19 @@ following validators have been used to validate HTML and CSS codes.
 
 + [W3C validator](https://validator.w3.org/) used for HTML validating
 
-![Html Validation](./assets/testing/)
+![Html Validation](./assets/testing/html-validate.jpg)
 
 ### <em>CSS Validator</em>
 
 + [CSS validation](https://jigsaw.w3.org/css-validator/) used for CSS validation
 
-![Sound button](./assets/testing/)
+![Sound button](./assets/testing/css-validate.jpg)
 
 ### <em>Java Script Validator</em>
 
 + [JSHint Validator](https://jshint.com/) used for CSS validation
 
-![Java Script Validation](./assets/testing/)
+![Java Script Validation](./assets/testing/validate-js.jpg)
 
 ### Testing Accessibility and Performance
 
@@ -178,6 +178,50 @@ I used google lighthouse to check Accessibility and Performance.
 | [Mobile view](./assets/testing/lighthouse-mobile.jpg)       | 84%         | 100%          | 100%           | 92% |
 
 ### Responsiveness
+
+The game is designed to be responsive and optimized for all devices, including mobile phones, tablets, and desktop computers.
+
+1. Landing Page: The home page includes a feedback modal to click start, Howto play or exit from the game.
+   
+    Desktop view
+
+    ![Landing page- Desktop view](./assets/responsiveness/desktop-landing.jpg)
+
+    Tablet view
+
+    ![Landing page- Tablet view](./assets/responsiveness/tablet-landing.jpg)
+
+    Mobile view
+
+    ![Landing page- Mobile view](./assets/responsiveness/mobile-landing.jpg)
+
+2. Game Page: The game page includes card grids controls and status bar and the title.
+
+    Desktop view
+
+    ![Home page- Desktop view](./assets/responsiveness/desktop-game.jpg)
+
+    Tablet view
+
+    ![Game page- Tablet view](./assets/responsiveness/tablet-game.jpg)
+
+    Mobile view
+
+    ![Game page- Mobile view](./assets/responsiveness/mobile-game.jpg)
+
+3. Info Page: The info page includes how to play game and other instructions need to play the game.
+
+    Desktop view
+
+    ![Info page- Desktop view](./assets/responsiveness/desktop-modal.jpg)
+
+    Tablet view
+
+    ![Info page- Tablet view](./assets/responsiveness/tab-modal.jpg)
+
+    Mobile view
+
+    ![Info page- Mobile view](./assets/responsiveness/mobile-modal.jpg)
 
 ### Testing User Stories
 
@@ -201,9 +245,9 @@ I used google lighthouse to check Accessibility and Performance.
 
 ### Media
 
-![Tunetank](https://tunetank.com/) for background audio
-![Pixabay](https://pixabay.com/) for favicon icon
-![flaticon](https://www.flaticon.com/) for image of cards
+1. [Tunetank](https://tunetank.com/) for background audio
+2. [Pixabay](https://pixabay.com/) for favicon icon
+3. [flaticon](https://www.flaticon.com/) for image of cards
 
 ### Acknowledgements
 
