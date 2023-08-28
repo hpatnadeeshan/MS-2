@@ -366,3 +366,7 @@ clone or download the website repository as a zip file or GitHub desktop method.
 + Creating a README(How to put together a well-documented README for your projects) by Code Institute
 + I would like to acknowledge my mentor Rory Patrick for his review and valuable feedback throughout the project.
 + I would like to thank my wife for testing the game and feedback.
+
+## Disclaimer
+
+This project was developed for educational purposes as part of the Code Institute's Interactive Front-End Development module.
