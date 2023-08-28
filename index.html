@@ -88,9 +88,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     />
   </head>
+
   <body>
     <p id="demo"></p>
+
     <div class="overlay" id="overlay"></div>
+
     <div class="background">
       <img
         src="./assets/images/background.webp"
@@ -98,13 +101,16 @@
         id="background"
       />
     </div>
+
     <header>
       <div class="title">
         <h1>Bunny Hop Memory</h1>
       </div>
     </header>
+
     <section>
       <h2 style="display: none">Game Status</h2>
+
       <div class="status-bar">
         <div class="timer">
           <p>Timer :<span id="timerId">00:00</span></p>
@@ -116,9 +122,10 @@
           <p>Level :<span>1</span></p>
         </div>
       </div>
+
       <div class="card-grid container-fluid"></div>
 
-      <!-- Modal for user feedback -->
+      <!-- Modal for user feedback from bootstrap-->
       <div class="modal" tabindex="-1" id="feedback" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -132,6 +139,7 @@
 
       <div class="rabbit-path container-fluid">
         <div class="rabbit-hole"></div>
+
         <div class="line"></div>
 
         <div class="rabbit-progress">
@@ -139,6 +147,7 @@
         </div>
       </div>
     </section>
+
     <footer class="info">
       <div class="controls">
         <a
@@ -158,15 +167,18 @@
         <span class="sound" id="soundButton"
           ><i class="fa-solid fa-volume-low"></i
         ></span>
+
         <span class="sound" id="muteButton"
           ><i class="fa-solid fa-volume-xmark"></i
         ></span>
+
         <span class="home" id="homeButton"
           ><i class="fa-solid fa-house"></i
         ></span>
       </div>
     </footer>
 
+    <!-- Modal for info from bootstrap-->
     <div class="modal" tabindex="-1" id="helpModal">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
