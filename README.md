@@ -2,7 +2,7 @@
 
 ## Milestone Project -02 - _Interactive Front End Development_ - Code Institute
 
-Bunny Hop Memory is a charming memory game where players guide a rabbit through a garden, collecting carrots while avoiding traps and outsmarting the watchful dog.This game can play any user without any age limites.
+Bunny Hop Memory is a charming memory game where players guide a rabbit through a garden, collecting carrots while avoiding traps and outsmarting the watchful dog. This game can be played by any user without any age limits.
 
 ## User Experience
 
@@ -10,36 +10,36 @@ Bunny Hop Memory is a charming memory game where players guide a rabbit through 
 
 + As a player, I want to see a grid of face-down cards containing images of carrots, traps, and a dog on the back of each card when I start the game.
 
-+ As a player I want to flipped 2 cards at a time.
++ As a player, I want to flip 2 cards at a time.
 + As a player, I want to earn points when I flip over two matching cards with images of carrots and lose points when I flip over two matching cards with trap images.
-+ As a player I must lose the game if I Select a card with dog image.
++ As a player I must lose the game if I Select a card with a dog image.
 + As a player, I expect the game to end immediately if I select a card with a dog image, resulting in a loss.
-+ As a player, I want to play continuously until the rabbit reaches its hole, unless I lose.
-+ As a player, I want the game to have levels and a total score, and I want these to be visible at all times
-+ As a player,I want to see the number of movements and the time it takes to complete the game, allowing me to track how many movements and how much time it took to win the game.
-+ As a player, I want to reset the game at anytime during play.
++ As a player, I want to play continuously until the rabbit reaches its hole unless I lose.
++ As a player, I want the game to have levels and a total score, and I want these to be visible at all times.
++ As a player, I want to see the number of movements and the time it takes to complete the game, allowing me to track how many movements and how much time it took to win the game.
++ As a player, I want to reset the game at any time during play.
 + As a player, I want the game to have animations, a visually appealing design, sound effects, and responsiveness across all devices.
-+ As a player, I want the game to be enjoyable, strategic, challenging, and to encourage the use of memory skills.
++ As a player, I want the game to be enjoyable, strategic, and challenging, and to encourage the use of memory skills.
 
 ### Design
 
- ##### Game Objective:
+##### Game Objective
 
-The objective of Bunny Hop Memory is to guide a bunny safely to its home while playing a memory card game. player needs to match pairs of carrot cards to earn points while avoiding traps and dog cards. The game consists of multiple levels, and player's goal is to successfully complete all levels.
+The objective of Bunny Hop Memory is to guide a bunny safely to its home while playing a memory card game. player needs to match pairs of carrot cards to earn points while avoiding traps and dog cards. The game consists of multiple levels, and the player's goal is to successfully complete all levels.
 
- ##### Game Elements:
+##### Game Elements
 
 **Cards:** The game is primarily played with a set of cards. Each card can be one of three types: carrot, trap, or dog.
 
-_Carrot Cards:_ Matching pairs of carrot cards earns player 10 points.
+_Carrot Cards:_ Matching pairs of carrot cards earns the player 10 points.
 _Trap Cards:_ Matching trap cards results in a loss of 5 points.
-_Dog Cards:_ Selecting a dog card ends the game, and player loses.
+_Dog Cards:_ Selecting a dog card ends the game, and the player loses.
 
-**Timer:** There's a timer displayed on the screen to keep track of the time player spends playing the game.
+**Timer:** There's a timer displayed on the screen to keep track of the time the player spends playing the game.
 
-**Score:** player's current score is displayed on the screen. Player earns points by matching carrot cards and loses points for matching trap cards.
+**Score:** The player's current score is displayed on the screen. The player earns points by matching carrot cards and loses points for matching trap cards.
 
-**Levels:** The game consists of multiple levels, each with an increasing number of cards. Player needs to complete each level to progress in the game.
+**Levels:** The game consists of multiple levels, each with an increasing number of cards. The player needs to complete each level to progress in the game.
 
 **Rabbit Path:** A visual representation of the bunny's progress is shown on a path. As you complete levels, the bunny moves closer to its home.
 
@@ -77,7 +77,7 @@ I used the Roboto and Exo Google fonts for this game. Roboto is used for the gam
 
 1. **Play button on the welcome screen:**
    + The feature of the play button is to start the game.
- 
+
     ![Play button](./assets/features/play.jpg)
 
 2. **Info button on the welcome screen:**
@@ -87,27 +87,27 @@ I used the Roboto and Exo Google fonts for this game. Roboto is used for the gam
 
 3. **Exit button on the welcome screen:**
    + Clicking this button allows you to exit the game.
- 
+
 ![Exit button](./assets/features/exit.jpg)
 
 4. **Timer on the game page:**
    + This displays how long you have been playing the game.
- 
+
 ![Timer](./assets/features/timer.jpg)
 
 5. **Score on the game page:**
    + It shows your current score as you progress in the game.
- 
+
 ![Score](./assets/features/score.jpg)
 
 6. **Level on the game page:**
    + It indicates which level you are currently on.
-   
+
 ![Level](./assets/features/level.jpg)
 
 7. **Game grid:**
    + The game grid displays playing cards. When you click on a card, it flips. If it's a match, it stays flipped; otherwise, it flips back.
-   
+
 ![Game grid](./assets/features/game-grid.jpg)
 
 8. **Info button on the game page:**
@@ -120,23 +120,23 @@ I used the Roboto and Exo Google fonts for this game. Roboto is used for the gam
 
 ![Restart](./assets/features/reset.jpg)
 
-10.  **Sound button on the game page:**
+10. **Sound button on the game page:**
     + You can use this button to turn sounds on or off.
-   
+
 ![Sound button](./assets/features/sound.jpg)
 
-11.  **Path for the bunny on the game page:**
+11. **Path for the bunny on the game page:**
     + The bunny moves along this path as you progress in the game. When you win, the bunny reaches its hole.
   
 ![Path for the bunny](./assets/features/rabbit-path.jpg)
 
 ### Future Features
 
-1. I wanto add a feature which will allow to add users to database with a username and password.
-2. I want add a feature that user can save their game.
-3. I want add sound effects for animation of the game.
-4. Add a high score leader board to the game to allow the user to add their name and record the moves and time.
-5. I want to add a more levels to the game then it will be harder in higher levels.
+1. I want to add a feature that will allow to add users to the database with a username and password.
+2. I want to add a feature that user can save their game.
+3. I want to add sound effects for the animation of the game.
+4. Add a high-score leaderboard to the game to allow the user to add their name and record the moves and time.
+5. I want to add more levels to the game then it will be harder in higher levels.
 
 ## Technologies Used
 
@@ -144,8 +144,8 @@ I used the Roboto and Exo Google fonts for this game. Roboto is used for the gam
 + Google Lighthouse for audits
 + Git source control
 + VS Code as IDE
-+ CodeAnywhere as online integrated development environment (IDE)
-+ W3C validator used for HTML validating
++ CodeAnywhere as an online integrated development environment (IDE)
++ W3C validator used for HTML validation
 + Jigsaw Validator used for CSS validation
 + JSHint used for Java Script validation
 + Color space for color selection
@@ -161,7 +161,7 @@ I used the Roboto and Exo Google fonts for this game. Roboto is used for the gam
 
 + Bootstrap v4.6.2
 + jquery 3.6.4
-+ Font Awsome
++ Font Awesome
 + moment.js
 
 ## Testing
@@ -203,8 +203,8 @@ I used google lighthouse to check Accessibility and Performance.
 
 The game is designed to be responsive and optimized for all devices, including mobile phones, tablets, and desktop computers.
 
-1. Landing Page: The home page includes a feedback modal to click start, Howto play or exit from the game.
-   
+1. Landing Page: The home page includes a feedback modal to click start, how to play or exit from the game.
+
     Desktop view
 
     ![Landing page- Desktop view](./assets/responsiveness/desktop-landing.jpg)
@@ -217,7 +217,7 @@ The game is designed to be responsive and optimized for all devices, including m
 
     ![Landing page- Mobile view](./assets/responsiveness/mobile-landing.jpg)
 
-2. Game Page: The game page includes card grids controls and status bar and the title.
+2. Game Page: The game page includes card grid controls and status bar and the title.
 
     Desktop view
 
@@ -231,7 +231,7 @@ The game is designed to be responsive and optimized for all devices, including m
 
     ![Game page- Mobile view](./assets/responsiveness/mobile-game.jpg)
 
-3. Info Page: The info page includes how to play game and other instructions need to play the game.
+3. Info Page: The info page includes how to play the game and other instructions needed to play the game.
 
     Desktop view
 
@@ -247,26 +247,26 @@ The game is designed to be responsive and optimized for all devices, including m
 
 ### Testing User Stories
 
-As a user/player I see most of the user stories are staisfied
+As a user/player, I see most of the user stories are satisfied
 
 + As a player, I can see a grid of face-down cards containing images of carrots, traps, and a dog on the back of each card when I start the game.
-+ As a player I can flipped 2 cards at a time.
-+ As a player, I see earn points when I flip over two matching cards with images of carrots and lose points when I flip over two matching cards with trap images.
-+ As a player, I see the game to end immediately if I select a card with a dog image, resulting in a loss.
-+ As a player, I can  play continuously until the rabbit reaches its hole, unless I lose.
-+ As a player, I can see that game have levels and a total score, and I want these to be visible at all times in status bar.
-+ As a player,I can see how much time it took to win the game in status bar.
-+ As a player, I can reset the game at anytime during play restart button in controls.
++ As a player I can flip 2 cards at a time.
++ As a player, I earn points when I flip over two matching cards with images of carrots and lose points when I flip over two matching cards with trap images.
++ As a player, I see the game end immediately if I select a card with a dog image, resulting in a loss.
++ As a player, I can play continuously until the rabbit reaches its hole unless I lose.
++ As a player, I can see that the game has levels and a total score, and I want these to be visible at all times in the status bar.
++ As a player, I can see how much time it took to win the game in the status bar.
++ As a player, I can reset the game at any time during the play restart button in the controls.
 + As a player, I see the game to have animations, a visually appealing design, sound effects, and responsiveness across all devices.
-+ As a player, I see that the game to be enjoyable, strategic, challenging, and to encourage the use of memory skills.
++ As a player, I see the game to be enjoyable, strategic, and challenging, and to encourage the use of memory skills.
 
-But the following user story has not been addressed because I deemed it unimportant, and it may vary from one game to another.
+However the following user story has not been addressed because I deemed it unimportant, and it may vary from one game to another.
 
-+ As a player I cant see the number of movement I have done
++ As a player I can see the number of movements I have done
 
 ### Problems Encountered
 
-While I was developing the game I encountered several bugs.However I identifeid main 3 bugs that are critical for the game.
+While I was developing the game I encountered several bugs. However, I identified main 3 bugs that are critical for the game.
 
 1. **Can flip cards while checking for a match.**
 
@@ -277,11 +277,11 @@ To achieve this, I introduced a `checkingForMatch` variable and set its value to
 ![checkingForMatch=true](./assets/debug/flipping-cards-while-running-checkfor-match/1.jpg)
 
 1. When a player flips two cards, the variable's value is set to `true` (indicating that a check is in progress).
-   
+
 ![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/4.jpg)
 
 2. The `checkForMatch` function runs. If it's not a match, the variable's value is set to `false`, allowing a new check to begin.
-   
+
 ![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/2.jpg  )
 
 3. Even if it's a match but not all cards have been found yet, the variable's value is set to `false`. In other words, if there are more cards to check, the process stops to run a new check.
@@ -347,13 +347,13 @@ clone or download the website repository as a zip file or GitHub desktop method.
 
 ### Code
 
-1. Feedback modal icons, and footer icons were taken from Font Awesome.
-2. Bootstrap framework used for modal, flex box and responsiveness throughout the website.
+1. Feedback modal icons and footer icons were taken from Font Awesome.
+2. Bootstrap framework used for modal, flexbox and responsiveness throughout the website.
 3. Google Fonts used in the website (Roboto & Exo)
 4. moment.js library used for timer functions.
 5. jQuery library used throughout the code.
 6. w3schools was used as a general source of knowledge
-7. youtube inspiration was taken for some sections.
+7. YouTube inspiration was taken for some sections.
 
 ### Media
 
