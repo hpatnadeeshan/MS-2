@@ -245,6 +245,14 @@ The game is designed to be responsive and optimized for all devices, including m
 
     ![Info page- Mobile view](./assets/responsiveness/mobile-modal.jpg)
 
+### Manual Testing vs Automated Testing
+
+Manual testing involves human testers who execute test cases, interact with the application's user interface, and observe its behavior to identify defects and issues. Testers simulate real user interactions, exploring various scenarios and edge cases to detect problems that may not be evident through automated means. Manual testing is well-suited for exploratory testing, usability assessment, and assessing the user experience.
+
+On the other hand, automated testing employs software tools and scripts to run predefined test cases and compare actual outcomes with expected results. Jest, for instance, is a popular JavaScript testing framework that automates the testing of JavaScript code. Automated tests are valuable for repetitive and regression testing, where the same tests need to be executed frequently, and they can catch issues quickly as part of a continuous integration process. Automated testing is efficient for validating code changes and ensuring codebase stability.
+
+In summary, manual testing relies on human judgment and intuition to assess an application's functionality, while automated testing leverages scripts and tools to verify software behavior systematically and repetitively. Each approach has its strengths and is often used in combination to achieve comprehensive software testing.
+
 ### Testing User Stories
 
 As a user/player, I see most of the user stories are satisfied
