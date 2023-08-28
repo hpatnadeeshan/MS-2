@@ -269,6 +269,38 @@ But the following user story has not been addressed because I deemed it unimport
 While I was developing the game I encountered several bugs.However I identifeid main 3 bugs that are critical for the game.
 
 1. **Can flip cards while checking for a match.**
+
+When testing the game, I discovered a bug where clicking four cards in a row without any breaks between card pairs would cause the fourth card to remain flipped. To debug this issue, I needed to prevent flipping while the `checkForMatch` function was running.
+
+To achieve this, I introduced a `checkingForMatch` variable and set its value to `false`. Here's how it works:
+
+![checkingForMatch=true](./assets/debug/flipping-cards-while-running-checkfor-match/1.jpg)
+
+1. When a player flips two cards, the variable's value is set to `true` (indicating that a check is in progress).
+   
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/4.jpg)
+
+2. The `checkForMatch` function runs. If it's not a match, the variable's value is set to `false`, allowing a new check to begin.
+   
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/2.jpg  )
+
+3. Even if it's a match but not all cards have been found yet, the variable's value is set to `false`. In other words, if there are more cards to check, the process stops to run a new check.
+
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/3.jpg)
+
+4. At the end of the shuffle function, the variable's value is changed to `false`, ensuring that a new check can be initiated.
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/1.jpg)
+
+5. Importantly, if the variable is `true` when the player tries to flip another card, the `flipCard` function will terminate early and return, preventing further flips.
+
+![return](./assets/debug/flipping-cards-while-running-checkfor-match/4-old.jpg)
+![return](./assets/debug/flipping-cards-while-running-checkfor-match/4.jpg)
+
+6. Additionally, I made another change: earlier, the `flippedCards` array was reset to empty outside of the `if` block where pairs were matched. Now, I've moved it inside the `if` block. This means that only when pairs are matched will the `flippedCards` array transform into an empty array.
+
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/5-old.jpg)
+![checkingForMatch=false](./assets/debug/flipping-cards-while-running-checkfor-match/5.jpg)
+
 2. **Can flip more than 2 cards at a time.**
 
 I encountered an issue where players could flip more than two cards at a time in the game. To handle this situation, I needed to control when players were allowed to click on cards. I realized that this control should be implemented after loading the images and flipping back all the cards (in the 'assignRandomImages' function) and also after a player clicks the first card. Clicking on any other card should be disabled until the 'checkForMatch' function has completed. Furthermore, clicking should be avoided when the game is over until it restarts and all the cards are flipped back.
@@ -281,7 +313,7 @@ One other mistake I made was changing the variable's value to 'true' in the midd
 
 <img src="./assets/debug/issue-can-click-more-than-2-cards/2-older.jpg" alt="Old code"> <img src="./assets/debug/issue-can-click-more-than-2-cards/2.jpg" alt="New Code">
 
-1. **Can flip cards while loading the cards at the start of a level.**
+3. **Can flip cards while loading the cards at the start of a level.**
 
 I identified a bug during my game testing phase where players could flip cards while the cards were still loading at the start of a level. To address this issue, I introduced an 'isInitial' variable.
 
@@ -298,7 +330,6 @@ Furthermore, the 'isInitial' variable is set to 'true' again when moving to the 
 Now, if a player attempts to flip a card before all the cards have been flipped back, the 'flip' function will be halted by checking the 'isInitial' variable. If the value is 'true,' the 'flip' function will return without executing any further lines of code within the 'flip' function.
 
 ![check whether value is true](./assets/debug/unclickable-when-loading-cards/2.jpg)
-
 
 ## Deployment
 

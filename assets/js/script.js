@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isInitial || checkingForMatch) {
                 return;
             }
-            // canClick = true;
             if (!cardElement.classList.contains("flipped") && flippedCards.length < 2 && canClick) {
                 cardElement.classList.add("flipped");
                 cardElement.style.transform = 'rotateY(0deg)'; // Corrected
