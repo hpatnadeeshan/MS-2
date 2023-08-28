@@ -45,8 +45,17 @@ body {
 }
 
 
+/* ---------404 page----------- */
+
+
 .error-page {
     background-color: #e6d4c3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: rgb(81, 69, 56);
 }
 
 
